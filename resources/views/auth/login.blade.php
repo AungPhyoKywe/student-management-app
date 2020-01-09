@@ -1,62 +1,102 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form - Tutsmake.com</title>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{url('style.css')}}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row no-gutter">
-        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-        <div class="col-md-8 col-lg-6">
-            <div class="login d-flex align-items-center py-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9 col-lg-8 mx-auto">
-                            <h3 class="login-heading mb-4">Welcome back!</h3>
-                            <form action="{{url('post-login')}}" method="POST" id="logForm">
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="../../index2.html"><b>Admin</b>LTE</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            @error('email')
+            <span class="text-danger" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
 
-                                {{ csrf_field() }}
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="input-group mb-3">
 
-                                <div class="form-label-group">
-                                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" >
-                                    <label for="inputEmail">Email address</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                    @if ($errors->has('email'))
-                                        <span class="error">{{ $errors->first('email') }}</span>
-                                    @endif
-                                </div>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
 
-                                <div class="form-label-group">
-                                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
-                                    <label for="inputPassword">Password</label>
+                </div>
+                @error('password')
+                <span class="text-danger" role="alert">
+                <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <div class="input-group mb-3">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                    @if ($errors->has('password'))
-                                        <span class="error">{{ $errors->first('password') }}</span>
-                                    @endif
-                                </div>
-
-                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign In</button>
-                                <div class="text-center">If you have an account?
-                                    <a class="small" href="{{url('registration')}}">Sign Up</a></div>
-                            </form>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            {{ __('Login') }}
+                        </button>
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <!-- /.social-auth-links -->
+
+            <p class="mb-1">
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                @endif
+            </p>
+
         </div>
+        <!-- /.login-card-body -->
     </div>
 </div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
 
 </body>
 </html>
+
+
