@@ -9,10 +9,12 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
+
                 <div class="col-12">
+
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><button class="btn btn-primary">Add New Student</button></h3>
+                            <h3 class="card-title"><button class="btn btn-primary"> + Add New Student</button></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -40,20 +42,12 @@
         </section>
     </div>
 
-
-    <!-- /.content-wrapper -->
-
-
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-
-<!-- page script -->
 <script>
     $(function () {
         $('#example2').DataTable({
             processing: true,
             serverSide: true,
+            responsive: true,
             ajax: "{{ url('/student/getdata') }}",
             columns: [
                 { data: 'id', name: 'id' },
@@ -61,14 +55,7 @@
                 { data: 'email', name: 'email' },
                 { data: 'created_at', name: 'created_at' }
             ],
-            dom: 'Bfrtip',
-            buttons: [
-                {
-                    tag:"button",
-                    className:"btn-sm btn-info",
-                    extend: 'colvis',
-                }
-            ]
+
         });
     });
 </script>
