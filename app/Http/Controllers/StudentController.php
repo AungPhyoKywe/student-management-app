@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Http\Request;
 use App\User;
 use Datatables;
@@ -15,7 +16,7 @@ class StudentController extends Controller
 
     public function getData(Request $request){
 
-        $data = User::latest()->get();
+        $data = Student::latest()->get();
 
         return datatables()->of($data)
             ->make(true);

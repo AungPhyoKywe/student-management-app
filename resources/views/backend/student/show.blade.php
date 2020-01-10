@@ -21,10 +21,11 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>id</th>
+
                                     <th>name</th>
-                                    <th>email</th>
-                                    <th>created_at</th>
+                                    <th>class</th>
+                                    <th>phone</th>
+                                    <th>address</th>
 
                                 </tr>
                                 </thead>
@@ -50,7 +51,6 @@
             responsive: true,
             ajax: "{{ url('/student/getdata') }}",
             columns: [
-                { data: 'id', name: 'id' },
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
                 { data: 'created_at', name: 'created_at' }
@@ -58,5 +58,6 @@
 
         });
     });
+
 </script>
 @stop
