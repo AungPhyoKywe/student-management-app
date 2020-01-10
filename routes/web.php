@@ -20,7 +20,7 @@ Route::get('/backend', function () {
 
 //student
 Route::get('/student/getdata','StudentController@getData')->name('student.getData');
-Route::get('/student','StudentController@index')->name('student.show');
+Route::resource('student','StudentController');
 
 Auth::routes();
 

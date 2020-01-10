@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use DB;
 use Illuminate\Http\Request;
 use App\User;
 use Datatables;
@@ -16,15 +17,16 @@ class StudentController extends Controller
 
     public function getData(Request $request){
 
-        $data = Student::latest()->get();
+        $data = DB::table('table_students')
+            ->select('table_students.name','table_classes.class_name','table_students.ph_no','table_students.address')
+            ->join('table_classes','table_students.class_id','=','table_classes.class_id')
+            ->get();
 
         return datatables()->of($data)
             ->make(true);
     }
-    public function index(Request $request)
+    public function index()
     {
-
-
 
         return view('backend.student.show');
     }
@@ -35,7 +37,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.student.create');
     }
 
     /**

@@ -14,7 +14,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><button class="btn btn-primary"> + Add New Student</button></h3>
+                            <h3 class="card-title"><a href="{{route('student.create')}}" class="btn btn-primary"> + Add New Student</a></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -52,8 +52,9 @@
             ajax: "{{ url('/student/getdata') }}",
             columns: [
                 { data: 'name', name: 'name' },
-                { data: 'email', name: 'email' },
-                { data: 'created_at', name: 'created_at' }
+                { data: 'class_name', name: 'table_classes.class_name' },
+                { data: 'ph_no', name: 'ph_no' },
+                { data: 'address', name: 'address' }
             ],
 
         });
