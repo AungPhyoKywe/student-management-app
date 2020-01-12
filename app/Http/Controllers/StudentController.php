@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes;
 use App\Student;
 use DB;
 use Illuminate\Http\Request;
@@ -33,11 +34,13 @@ class StudentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        return view('backend.student.create');
+        $class= Classes::pluck('class_id','class_name');
+
+        return view('backend.student.create',['class'=>$class]);
     }
 
     /**
@@ -48,7 +51,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
