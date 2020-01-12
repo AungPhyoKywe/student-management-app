@@ -100,13 +100,10 @@
                                                                 <div class="row">
                                                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                                                         <div class="form-group">
-                                                                            <strong>Image:</strong>
-                                                                            <div style="height:0px;overflow:hidden;"><input type="file" name="image" value="" id="jumbo_image" accept="image/jpg,image/jpeg,image/png" data-parsley-required="true"  data-parsley-errors-container= '#imgErr'/></div>
-                                                                            <button class="btn btn-primary" style="opacity: 0.7; position: absolute;"data-placement="left" data-toggle="tooltip" title="Upload new image"onclick="document.getElementById('file-input').click();"><i class="far fa-upload"></i></button>
-                                                                            <img id="jumbo_image_preview" style="border:1px solid lightgray; width: 200px; height: 200px;" src="/img/aa.jpg" alt="image preview" class="img-responsive">
+                                                                            <strong>Image:</strong><br>
+                                                                            <img src="" id="profile-img-tag" style="width: 150px;height: 150px;border-bottom-color: #0c525d" /><br><br>
+                                                                            <input class="form-group  btn-primary" type="file" name="file" id="profile-img">
 
-                                                                            <input id="file-input" type="file" name="name" style="display: none;" />
-                                                                            <span id="imgErr" class='parsley-errors-list filled'></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -123,7 +120,6 @@
                                                                 </div>
 
                                                             </form>
-
                                                     </div>
 
                                                             <!-- end form -->
@@ -131,7 +127,6 @@
                                                         </div>
                                                         <!-- end content body panel -->
                                                     </div>
-
                                         </section>
                                     </div>
                                 </div>
@@ -141,4 +136,19 @@
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profile-img-tag').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#profile-img").change(function(){
+            readURL(this);
+        });
+    </script>
     @stop
