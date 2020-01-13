@@ -13,36 +13,24 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><a href="{{route('student.create')}}" class="btn btn-primary"> + Add New Student</a></h3>
+                            <h3 class="card-title"><a href="{{route('timetable.create')}}" class="btn btn-primary"> + Add New TimeTable</a></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>image</th>
-                                    <th>name</th>
-                                    <th>class</th>
-                                    <th>phone</th>
-                                    <th>address</th>
+                                    <th>Teacher</th>
+                                    <th>Class</th>
+                                    <th>Date</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data as $d)
-                                 <tr>
-                                     <td><img class="rounded-circle" src="/uploads/logos/{{$d->profile_image}}"width="70"height="70"></td>
-                                     <td>{{ $d->name }}</td>
-                                     <td>{{ $d->class_name }}</td>
-                                     <td>{{ $d->ph_no }}</td>
-                                     <td>{{ $d->address }}</td>
-                                     <td>
-                                         <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-success">edit</a>
-                                         <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger">delete</a>
-                                     </td>
-                                 </tr>
-                                @endforeach
+
 
                                 </tbody>
 
@@ -52,25 +40,24 @@
                     </div>
                     <!-- /.card -->
                 </div>
-                    <!-- /.card -->
+                <!-- /.card -->
             </div>
 
         </section>
     </div>
 
     <script>
-    $(document).ready( function () {
+        $(document).ready( function () {
 
-        $('#example2').DataTable(
+            $('#example2').DataTable(
 
-            {
-                responsive: true,
+                {
+                    responsive: true
+                }
+            );
+        });
 
-            }
-        );
-    });
-
-    function confirmation($id) {
+        function confirmation($id) {
             swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this imaginary file!",
@@ -94,7 +81,7 @@
                 }
             })
 
-    }
+        }
 
-</script>
+    </script>
 @stop

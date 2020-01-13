@@ -38,26 +38,40 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('student.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-graduation-cap"></i>
                                 <p>Students</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('teacher.index') }}" class="nav-link">
+                                <i class="fas fa-chalkboard-teacher"></i>
                                 <p>Teachers</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Classes</p>
+                            <a href="{{ route('timetable.index') }}" class="nav-link">
+                                <i class="fas fa-table"></i>
+                                <p>Time Tables</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-table"></i>
+                                <p>Exam</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Time Tables</p>
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-bookmark"></i>
+                                <p>Subjects</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-book-open"></i>
+                                <p>Score</p>
                             </a>
                         </li>
 
@@ -74,22 +88,17 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="pages/charts/chartjs.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-book"></i>
                                 <p>student report</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/charts/flot.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-book"></i>
                                 <p>Teacher report</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
 

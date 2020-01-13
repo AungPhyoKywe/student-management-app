@@ -12,9 +12,13 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'superadmin',
+            'name' => 'Superadmin',
             'email' => 'hinata0777@gmail.com',
+            'profile_image'=>'admin.jpg',
+            'ph_no'=>'0988-9887-99',
+            'address'=>'America',
             'password' => bcrypt('111111'),
+            'role'=>'superadmin'
         ]);
     }
 }
