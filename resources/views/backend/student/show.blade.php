@@ -21,7 +21,7 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-
+                                    <th>image</th>
                                     <th>name</th>
                                     <th>class</th>
                                     <th>phone</th>
@@ -69,6 +69,7 @@
             responsive: true,
             ajax: "{{ url('/student/getdata') }}",
             columns: [
+                { data: 'name', name: 'name' },
                 { data: 'name', name: 'name' },
                 { data: 'class_name', name: 'table_classes.class_name' },
                 { data: 'ph_no', name: 'ph_no' },
