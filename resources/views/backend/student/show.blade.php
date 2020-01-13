@@ -30,8 +30,22 @@
 
                                 </tr>
                                 </thead>
+                                <tbody>
+                                @foreach($data as $d)
+                                 <tr>
+                                     <td>{{ $d->profile_image }}</td>
+                                     <td>{{ $d->name }}</td>
+                                     <td>{{ $d->class_name }}</td>
+                                     <td>{{ $d->ph_no }}</td>
+                                     <td>{{ $d->address }}</td>
+                                     <td>
+                                         <a href=""class="btn-sm btn-success">edit</a>
+                                         <a href=""class="btn-sm btn-danger">delete</a>
+                                     </td>
+                                 </tr>
+                                @endforeach
 
-                            <button class="btn btn-sm"></button>
+                                </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -43,40 +57,13 @@
                 </div>
         </section>
     </div>
-    <script id="datatableActionsTemplate" type="text/html">
-
-
-
-        <a class="btn btn-info btn-icon btn-circle" href="jobcategory/{id}/edit">
-            <i class="fa fa-edit"></i>
-        </a>&nbsp;
-
-
-
-        <a class="btn btn-danger btn-icon btn-circle" href="#" onClick="confirmDelete('delete_single','jobcategory/{id}','jobCategory')">
-            <i class="fa fa-times"></i>
-        </a>&nbsp;
-
-
-    </script>
 
 <script>
-    var datatableActionsTemplate = $("#datatableActionsTemplate").html();
     $(function () {
         $('#example2').DataTable({
             processing: true,
             serverSide: true,
             responsive: true,
-            ajax: "{{ url('/student/getdata') }}",
-            columns: [
-                { data: 'name', name: 'name' },
-                { data: 'name', name: 'name' },
-                { data: 'class_name', name: 'table_classes.class_name' },
-                { data: 'ph_no', name: 'ph_no' },
-                { data: 'address', name: 'address' }
-            ],
-
-            columnDefs:[{"targets":5}],
 
         });
     });

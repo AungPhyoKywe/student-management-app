@@ -16,20 +16,14 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getData(Request $request){
-
+    public function index()
+    {
         $data = DB::table('table_students')
-            ->select('table_students.name','table_classes.class_name','table_students.ph_no','table_students.address')
+            ->select('table_students.name','table_students.profile_image','table_classes.class_name','table_students.ph_no','table_students.address')
             ->join('table_classes','table_students.class_id','=','table_classes.class_id')
             ->get();
 
-        return datatables()->of($data)
-            ->make(true);
-    }
-    public function index()
-    {
-
-        return view('backend.student.show');
+        return view('backend.student.show',['data'=>$data]);
     }
     /**
      * Show the form for creating a new resource.
