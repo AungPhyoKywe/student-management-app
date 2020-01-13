@@ -13,15 +13,13 @@
 Route::get('/',function (){
     return redirect('/login');
 });
-Route::get('/backend', function () {
-    return view('backend.index');
-});
+Route::get('/backend','SuperAdminController@index');
 
 
 //student
 Route::get('/student/getdata','StudentController@getData')->name('student.getData');
 Route::resource('student','StudentController');
-
+Route::get('/students/{id}','StudentController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

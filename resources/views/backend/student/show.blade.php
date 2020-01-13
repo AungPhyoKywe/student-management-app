@@ -5,7 +5,6 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
-
         <!-- Main content -->
         <section class="content">
             <div class="row">
@@ -33,40 +32,68 @@
                                 <tbody>
                                 @foreach($data as $d)
                                  <tr>
-                                     <td>{{ $d->profile_image }}</td>
+                                     <td><img class="rounded-circle" src="/uploads/logos/{{$d->profile_image}}"width="70"height="70"></td>
                                      <td>{{ $d->name }}</td>
                                      <td>{{ $d->class_name }}</td>
                                      <td>{{ $d->ph_no }}</td>
                                      <td>{{ $d->address }}</td>
                                      <td>
-                                         <a href=""class="btn-sm btn-success">edit</a>
-                                         <a href=""class="btn-sm btn-danger">delete</a>
+                                         <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-success">edit</a>
+                                         <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger">delete</a>
                                      </td>
                                  </tr>
                                 @endforeach
 
                                 </tbody>
+
                             </table>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-
                 </div>
                     <!-- /.card -->
-                </div>
+            </div>
+
         </section>
     </div>
 
-<script>
-    $(function () {
-        $('#example2').DataTable({
-            processing: true,
-            serverSide: true,
-            responsive: true,
+    <script>
+    $(document).ready( function () {
 
-        });
+        $('#example2').DataTable(
+
+            {
+                responsive: true
+            }
+        );
     });
+
+    function confirmation($id) {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: [
+                    'No, cancel it!',
+                    'Yes, I am sure!'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Shortlisted!',
+                        text: 'Candidates are successfully shortlisted!',
+                        icon: 'success'
+                    }).then(function () {
+                        window.location.href='/students/'+$id;
+                    })
+                } else {
+                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                }
+            })
+
+    }
 
 </script>
 @stop

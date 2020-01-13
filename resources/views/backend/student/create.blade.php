@@ -36,7 +36,7 @@
                                                     <div class="container">
 
                                                             <!-- start form -->
-                                                            <form name="countryForm" id="countryForm" method="POST" action="{{ route('student.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                            <form name="studentForm" id="studentForm" method="POST" action="{{ route('student.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                                                                 {!! csrf_field() !!}
 
                                                                 <div class="row">
@@ -63,7 +63,7 @@
                                                                                     data-parsley-maxlength="255">
 
                                                                                 @foreach($class as $key => $classes)
-                                                                                <option >{{ $key }}</option>
+                                                                                <option value="{{ $classes }}">{{ $key }}</option>
                                                                                 @endforeach
                                                                             </select>
                                                                 </div>
@@ -74,7 +74,7 @@
                                                                         <div class="form-group">
                                                                             <strong>Phone:</strong>
                                                                             <input type="text"
-                                                                                   name="country_url"
+                                                                                   name="phone"
                                                                                    value="{{ old('phone') }}"
                                                                                    placeholder="phone"
                                                                                    class="form-control"
