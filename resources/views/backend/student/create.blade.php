@@ -74,7 +74,7 @@
                                                                         <div class="form-group">
                                                                             <strong>Phone:</strong>
                                                                             <input type="text"
-                                                                                   name="country_url"
+                                                                                   name="phone"
                                                                                    value="{{ old('phone') }}"
                                                                                    placeholder="phone"
                                                                                    class="form-control"

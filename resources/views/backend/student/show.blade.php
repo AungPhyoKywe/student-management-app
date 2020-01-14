@@ -30,9 +30,9 @@
                                 </tr>
                                 </thead>
 
-                            <button class="btn btn-sm"></button>
                             </table>
                         </div>
+                        
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
@@ -40,6 +40,7 @@
                 </div>
                     <!-- /.card -->
                 </div>
+
         </section>
     </div>
 
