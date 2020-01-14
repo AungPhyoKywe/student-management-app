@@ -48,7 +48,12 @@
                                 <p>Teachers</p>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-book-open"></i>
+                                <p>Student Enroll</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('timetable.index') }}" class="nav-link">
                                 <i class="fas fa-table"></i>
@@ -58,7 +63,7 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fas fa-table"></i>
+                                <i class="far fa-sticky-note"></i>
                                 <p>Exam</p>
                             </a>
                         </li>
@@ -71,7 +76,13 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-book-open"></i>
-                                <p>Score</p>
+                                <p>Student Marks</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <p>Attendence</p>
                             </a>
                         </li>
 

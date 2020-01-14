@@ -22,6 +22,11 @@
                                 <tr>
                                     <th>image</th>
                                     <th>name</th>
+                                    <th>age</th>
+                                    <th>gender</th>
+                                    <th>father's name</th>
+                                    <th>reglious</th>
+                                    <th>Dath of birth</th>
                                     <th>class</th>
                                     <th>phone</th>
                                     <th>address</th>
