@@ -16,20 +16,13 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getData(Request $request){
-
-        $data = DB::table('table_students')
-            ->select('table_students.name','table_classes.class_name','table_students.ph_no','table_students.address')
-            ->join('table_classes','table_students.class_id','=','table_classes.class_id')
-            ->get();
-
-        return datatables()->of($data)
-            ->make(true);
-    }
     public function index()
     {
+        $data = DB::table('table_students')
+            ->select('*')
+            ->get();
 
-        return view('backend.student.show');
+        return view('backend.student.show',['data'=>$data]);
     }
     /**
      * Show the form for creating a new resource.
@@ -51,7 +44,28 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+
+        $student=new Student();
+        $student->name=$request->name;
+        $student->age=$request->age;
+        $student->gender=$request->gender;
+        $student->father_name=$request->fname;
+        $student->DOB=$request->dob;
+        $student->reglious=$request->reglious;
+        $student->ph_no=$request->phone;
+        $student->address=$request->address;
+        $filename=null;
+        if($request->hasfile('file'))
+        {
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename =time().'.'.$extension;
+            $file->move('uploads/logos/', $filename);
+        }
+        $student->profile_image=$filename;
+        $student->save();
+
+        return redirect('/student');
     }
 
     /**
@@ -73,7 +87,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $class= Classes::pluck('class_id','class_name');
+       $student = DB::table('table_students')->select('*')->where('id',$id)->get();
+
+       return  view('backend.student.edit',['student'=>$student,'class'=>$class]);
     }
 
     /**
@@ -85,7 +102,27 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student=Student::find($id);
+        $student->name=$request->name;
+        $student->age=$request->age;
+        $student->gender=$request->gender;
+        $student->father_name=$request->fname;
+        $student->DOB=$request->dob;
+        $student->reglious=$request->reglious;
+        $student->ph_no=$request->phone;
+        $student->address=$request->address;
+        if($request->hasfile('file'))
+        {
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename =time().'.'.$extension;
+            $file->move('uploads/logos/', $filename);
+            $student->profile_image=$filename;
+        }
+
+        $student->save();
+
+        return redirect('/student');
     }
 
     /**
@@ -96,6 +133,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student=new Student();
+        $student->where('id',$id)->delete();
+        return redirect('/student');
     }
 }

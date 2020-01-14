@@ -36,7 +36,7 @@
                                                     <div class="container">
 
                                                             <!-- start form -->
-                                                            <form name="countryForm" id="countryForm" method="POST" action="{{ route('student.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                            <form name="studentForm" id="studentForm" method="POST" action="{{ route('student.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                                                                 {!! csrf_field() !!}
 
                                                                 <div class="row">
@@ -56,19 +56,79 @@
                                                                 <div class="row">
                                                                     <div class="col-xs-12 col-sm-12 col-md-6">
                                                                         <div class="form-group">
-                                                                            <strong>Class:</strong>
+                                                                            <strong>Age:</strong>
                                                                             <select class="form-control"
-                                                                                    name="class"
+                                                                                    name="age"
                                                                                     data-parsley-required="true"
                                                                                     data-parsley-maxlength="255">
 
-                                                                                @foreach($class as $key => $classes)
-                                                                                <option >{{ $key }}</option>
-                                                                                @endforeach
+                                                                                @for($age=10; $age<21;$age++)
+                                                                                    <option value="{{ $age }}">{{ $age }}</option>
+                                                                                @endfor
                                                                             </select>
-                                                                </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <strong>Father Name:</strong>
+                                                                            <input type="text"
+                                                                                   name="fname"
+                                                                                   value="{{ old('fname') }}"
+                                                                                   placeholder="Father Name"
+                                                                                   class="form-control"
+                                                                                   data-parsley-required="true"
+                                                                                   data-parsley-maxlength="255"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <strong>Date Of Birth:</strong>
+                                                                            <input type="date"
+                                                                                   name="dob"
+                                                                                   value="{{ old('dob') }}"
+                                                                                   placeholder="Date Of Birth"
+                                                                                   class="form-control"
+                                                                                   data-parsley-required="true"
+                                                                                   data-parsley-maxlength="255"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <strong>Gender:</strong>
+                                                                            <select class="form-control"
+                                                                                    name="gender"
+                                                                                    data-parsley-required="true"
+                                                                                    data-parsley-maxlength="255">
+
+                                                                                <option value="male">Male</option>
+                                                                                <option value="female">Female</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <strong>Reglious:</strong>
+                                                                            <select class="form-control"
+                                                                                    name="reglious"
+                                                                                    data-parsley-required="true"
+                                                                                    data-parsley-maxlength="255">
+
+                                                                                <option value="Buddha">Buddha</option>
+                                                                                <option value="Christian">Christian</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="row">
                                                                     <div class="col-xs-12 col-sm-12 col-md-6">
                                                                         <div class="form-group">

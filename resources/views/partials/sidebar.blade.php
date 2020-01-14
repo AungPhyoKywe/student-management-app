@@ -4,7 +4,7 @@
     <a href="/" class="brand-link">
         <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light"> School Managements</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,7 +15,7 @@
                 <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{Auth()->user()->name}}</a>
             </div>
         </div>
 
@@ -28,36 +28,95 @@
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="fas fa-graduation-cap"></i>
                         <p>
-                            School Managements
+                            Students
                             <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('student.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Students</p>
+                                <p>Students List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a href="{{ route('student.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Teachers</p>
+                                <p>Students Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <p>
+                            Teacher
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('teacher.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Teacher List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                            <a href="{{route('teacher.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Classes</p>
+                                <p>Teacher Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('enroll.index')}}" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        <p>Student Enroll
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('enroll.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Enroll List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                            <a href="{{route('enroll.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Time Tables</p>
+                                <p>Enroll Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('timetable.index') }}" class="nav-link">
+                        <i class="fas fa-table"></i>
+                        <p>Time Tables
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('timetable.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>TimeTable List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('timetable.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>TimeTable Add</p>
                             </a>
                         </li>
 
@@ -65,7 +124,99 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-sticky-note"></i>
+                        <p>Exam
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Exam List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Exam Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bookmark"></i>
+                        <p>Subjects
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Subjects List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Subjects Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        <p>Student Marks
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Marks List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Marks Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <p>Attendence
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Attendence List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Attendence Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-book"></i>
                         <p>
                             Report
                             <i class="right fas fa-angle-left"></i>
@@ -73,23 +224,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>student report</p>
+                                <p>Student report</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Teacher report</p>
+                                <p>Teachers report</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -97,6 +243,8 @@
         </nav>
         <!-- /.sidebar-menu -->
     </div>
+
+
     <!-- /.sidebar -->
 </aside>
 

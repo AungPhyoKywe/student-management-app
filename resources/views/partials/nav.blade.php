@@ -7,6 +7,12 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
+            <li class="nav-item">
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="float-lg-right">
 
             <li class="nav-item dropdown">
 
@@ -26,10 +32,7 @@
                     </form>
                 </div>
             </li>
-        </ul>
 
-
-    </nav>
-</div>
-</body>
+        </div>
+    </div>
 
