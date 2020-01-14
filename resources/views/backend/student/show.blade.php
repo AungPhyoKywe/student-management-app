@@ -46,8 +46,8 @@
                                      <td>{{ $d->ph_no }}</td>
                                      <td>{{ $d->address }}</td>
                                      <td>
-                                         <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-success">edit</a>
-                                         <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger">delete</a>
+                                         <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                         <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                      </td>
                                  </tr>
                                 @endforeach
