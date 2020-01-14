@@ -31,7 +31,7 @@
                                 <tbody>
                                     @foreach($user as $u)
                                         <tr>
-                                            <td><img class="rounded-circle" src="/uploads/teacher/{{$u->profile_image}}"width="70"height="70"></td>
+                                            <td><img class="rounded-circle" src="/uploads/teacher/{{$u->profile_image}}"width="40"height="40"></td>
                                             <td>{{$u->name}}</td>
                                             <td>{{$u->ph_no}}</td>
                                             <td>{{$u->address}}</td>

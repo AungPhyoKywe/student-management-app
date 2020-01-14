@@ -128,22 +128,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                        <div class="form-group">
-                                                                            <strong>Class:</strong>
-                                                                            <select class="form-control"
-                                                                                    name="class"
-                                                                                    data-parsley-required="true"
-                                                                                    data-parsley-maxlength="255">
 
-                                                                                @foreach($class as $key => $classes)
-                                                                                <option value="{{ $classes }}">{{ $key }}</option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                </div>
-                                                                    </div>
-                                                                </div>
                                                                 <div class="row">
                                                                     <div class="col-xs-12 col-sm-12 col-md-6">
                                                                         <div class="form-group">

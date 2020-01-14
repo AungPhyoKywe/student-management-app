@@ -13,43 +13,31 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><a href="{{route('student.create')}}" class="btn btn-primary"> + Add New Student</a></h3>
+                            <h3 class="card-title"><a href="{{route('enroll.create')}}" class="btn btn-primary"> + Add New Enrolment</a></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>image</th>
-                                    <th>name</th>
-                                    <th>age</th>
-                                    <th>gender</th>
-                                    <th>father's name</th>
-                                    <th>reglious</th>
-                                    <th>Dath of birth</th>
-                                    <th>phone</th>
-                                    <th>address</th>
+                                    <th>Student Name</th>
+                                    <th>Class Name</th>
+                                    <th>Enrolment Date</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data as $d)
-                                 <tr>
-                                     <td><img class="rounded-circle" src="/uploads/logos/{{$d->profile_image}}"width="40"height="40"></td>
-                                     <td>{{ $d->name }}</td>
-                                     <td>{{ $d->age }}</td>
-                                     <td>{{ $d->gender }}</td>
-                                     <td>{{ $d->father_name }}</td>
-                                     <td>{{ $d->reglious }}</td>
-                                     <td>{{ $d->DOB }}</td>
-                                     <td>{{ $d->ph_no }}</td>
-                                     <td>{{ $d->address }}</td>
-                                     <td>
-                                         <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-success">edit</a>
-                                         <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger">delete</a>
-                                     </td>
-                                 </tr>
+                                @foreach($enrol as $e)
+                                <tr>
+                                    <td>{{ $e->name }}</td>
+                                    <td>{{ $e->class_name }}</td>
+                                    <td>{{ $e->enrolment_date }}</td>
+                                    <td>
+                                        <a href="{{route('enroll.edit',$e->id) }}" class="btn-sm btn-success">edit</a>
+                                        <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger">delete</a>
+                                    </td>
+                                </tr>
                                 @endforeach
 
                                 </tbody>
@@ -60,25 +48,25 @@
                     </div>
                     <!-- /.card -->
                 </div>
-                    <!-- /.card -->
+                <!-- /.card -->
             </div>
 
         </section>
     </div>
 
     <script>
-    $(document).ready( function () {
+        $(document).ready( function () {
 
-        $('#example2').DataTable(
+            $('#example2').DataTable(
 
-            {
-                responsive: true,
+                {
+                    responsive: true,
 
-            }
-        );
-    });
+                }
+            );
+        });
 
-    function confirmation($id) {
+        function confirmation($id) {
             swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this imaginary file!",
@@ -95,14 +83,14 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/students/'+$id;
+                        window.location.href='/enrolls/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");
                 }
             })
 
-    }
+        }
 
-</script>
+    </script>
 @stop
