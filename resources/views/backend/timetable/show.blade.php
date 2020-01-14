@@ -30,8 +30,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
-
+                                @foreach($timetable as $time)
+                                   <tr>
+                                       <td>{{$time->name}}</td>
+                                       <td>{{$time->class_name}}</td>
+                                       <td>{{$time->date}}</td>
+                                       <td>{{$time->start_time}}</td>
+                                       <td>{{$time->end_time}}</td>
+                                       <td>
+                                       <a href="{{route('timetable.edit',$time->id) }}" class="btn-sm btn-success">edit</a>
+                                       <a href="#" onclick="confirmation({{ $time->id }})"  class="btn-sm btn-danger">delete</a>
+                                       </td>
+                                   </tr>
+                                @endforeach
                                 </tbody>
 
                             </table>
@@ -74,7 +85,7 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/students/'+$id;
+                        window.location.href='/timetables/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

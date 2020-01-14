@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -13,7 +14,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('backend.teacher.show');
+        $user=User::where('role','teacher')->get();
+
+        return view('backend.teacher.show',['user'=>$user]);
     }
 
     /**
@@ -34,7 +37,32 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => 'required|same:confirm-password|max:255',
+            'phone' => 'required',
+            'address'=>'required',
+        ]);
+        $user=new User();
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->ph_no=$request->phone;
+        $user->address=$request->address;
+        $user->role='teacher';
+        $filename=null;
+        if($request->hasfile('file'))
+        {
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename =time().'.'.$extension;
+            $file->move('uploads/teacher/', $filename);
+        }
+        $user->profile_image=$filename;
+        $user->save();
+
+        return  redirect('/teacher');
     }
 
     /**
@@ -56,7 +84,8 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::where('id',$id)->get();
+        return view('backend.teacher.edit',['user'=>$user]);
     }
 
     /**
@@ -68,7 +97,32 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email,'.$id."|max:255",
+            'password' => 'required|same:confirm-password|max:255',
+            'phone' => 'required',
+            'address'=>'required',
+        ]);
+        $user=User::find($id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->ph_no=$request->phone;
+        $user->address=$request->address;
+        $user->role='teacher';
+        $filename=$user->profile_image;
+        if($request->hasfile('file'))
+        {
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename =time().'.'.$extension;
+            $file->move('uploads/teacher/', $filename);
+        }
+        $user->profile_image=$filename;
+        $user->save();
+
+        return  redirect('/teacher');
     }
 
     /**
@@ -79,6 +133,8 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=new User();
+        $user->where('id',$id)->delete();
+        return redirect('/teacher');
     }
 }

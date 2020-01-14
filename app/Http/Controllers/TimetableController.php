@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Classes;
+use App\Timetable;
+use App\User;
+use DB;
 use Illuminate\Http\Request;
 
 class TimetableController extends Controller
@@ -14,7 +17,13 @@ class TimetableController extends Controller
      */
     public function index()
     {
-        return view('backend.timetable.show');
+        $timetable=DB::table('table_timetables')
+            ->select('table_timetables.id','users.name','table_classes.class_name','table_timetables.date','table_timetables.start_time','table_timetables.end_time')
+            ->join('table_classes','table_classes.class_id','=','table_timetables.class_id')
+            ->join('users','users.id','=','table_timetables.teacher_id')
+            ->get();
+
+        return view('backend.timetable.show',['timetable'=>$timetable]);
     }
 
     /**
@@ -24,9 +33,10 @@ class TimetableController extends Controller
      */
     public function create()
     {
+        $teacher=User::where('role','teacher')->pluck('id','name');
         $class= Classes::pluck('class_id','class_name');
 
-        return view('backend.timetable.create',['class'=>$class]);
+        return view('backend.timetable.create',['class'=>$class,'teacher'=>$teacher]);
     }
 
     /**
@@ -37,7 +47,15 @@ class TimetableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $timetable=new Timetable();
+        $timetable->class_id=$request->class;
+        $timetable->teacher_id=$request->teacher;
+        $timetable->date=$request->date;
+        $timetable->start_time=$request->start_time;
+        $timetable->end_time=$request->end_time;
+        $timetable->save();
+        return redirect('/timetable');
+
     }
 
     /**
@@ -58,8 +76,15 @@ class TimetableController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $timetable=DB::table('table_timetables')
+        ->select('table_timetables.id','users.name','table_classes.class_name','table_timetables.date','table_timetables.start_time','table_timetables.end_time')
+        ->join('table_classes','table_classes.class_id','=','table_timetables.class_id')
+        ->join('users','users.id','=','table_timetables.teacher_id')
+        ->where('users.id',$id)
+        ->get();
+        $teacher=User::where('role','teacher')->pluck('id','name');
+        $class= Classes::pluck('class_id','class_name');
+        return view('backend.timetable.edit',['class'=>$class,'teacher'=>$teacher,'timetable'=>$timetable]);
     }
 
     /**
@@ -71,7 +96,15 @@ class TimetableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $timetable=Timetable::find($id);
+        $timetable->class_id=$request->class;
+        $timetable->teacher_id=$request->teacher;
+        $timetable->date=$request->date;
+        $timetable->start_time=$request->start_time;
+        $timetable->end_time=$request->end_time;
+        $timetable->save();
+        return redirect('/timetable');
     }
 
     /**
@@ -82,6 +115,8 @@ class TimetableController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $timetable =Timetable::find($id);
+        $timetable->delete();
+        return redirect('/timetable');
     }
 }

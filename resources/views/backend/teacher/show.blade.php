@@ -29,7 +29,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($user as $u)
+                                        <tr>
+                                            <td><img class="rounded-circle" src="/uploads/teacher/{{$u->profile_image}}"width="70"height="70"></td>
+                                            <td>{{$u->name}}</td>
+                                            <td>{{$u->ph_no}}</td>
+                                            <td>{{$u->address}}</td>
+                                            <td>
+                                                <a href="{{route('teacher.edit',$u->id) }}" class="btn-sm btn-success">edit</a>
+                                                <a href="#" onclick="confirmation({{ $u->id }})"  class="btn-sm btn-danger">delete</a>
+                                            </td>
 
+                                        </tr>
+                                    @endforeach
 
                                 </tbody>
 
@@ -73,7 +85,7 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/students/'+$id;
+                        window.location.href='/teachers/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

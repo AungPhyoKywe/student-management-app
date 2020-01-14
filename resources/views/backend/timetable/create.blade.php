@@ -43,13 +43,15 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <strong>Teacher:</strong>
-                                                                    <input type="text"
-                                                                           name="teacher"
-                                                                           value="{{ old('name') }}"
-                                                                           placeholder="Name"
-                                                                           class="form-control"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255"/>
+                                                                    <select class="form-control"
+                                                                            name="teacher"
+                                                                            data-parsley-required="true"
+                                                                            data-parsley-maxlength="255">
+
+                                                                        @foreach($teacher as $key => $t)
+                                                                            <option value="{{ $t }}">{{ $key }}</option>
+                                                                        @endforeach
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>

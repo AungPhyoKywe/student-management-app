@@ -74,7 +74,6 @@
                                                                     <strong>Address:</strong>
                                                                     <input type="text"
                                                                            name="address"
-                                                                           value="address"
                                                                            placeholder="address"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
@@ -88,7 +87,6 @@
                                                                     <strong>Email:</strong>
                                                                     <input type="email"
                                                                            name="email"
-                                                                           value="email"
                                                                            placeholder="email"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
@@ -102,7 +100,6 @@
                                                                     <strong>password:</strong>
                                                                     <input type="password"
                                                                            name="password"
-                                                                           value="password"
                                                                            placeholder="password"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
@@ -115,8 +112,7 @@
                                                                 <div class="form-group">
                                                                     <strong>confirm password:</strong>
                                                                     <input type="password"
-                                                                           name="address"
-                                                                           value="address"
+                                                                           name="confirm-password"
                                                                            placeholder="confirm password"
                                                                            class="form-control"
                                                                            data-parsley-required="true"

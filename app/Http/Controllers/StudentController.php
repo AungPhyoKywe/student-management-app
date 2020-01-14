@@ -50,6 +50,7 @@ class StudentController extends Controller
         $student->class_id=$request->class;
         $student->ph_no=$request->phone;
         $student->address=$request->address;
+        $filename=null;
         if($request->hasfile('file'))
         {
             $file = $request->file('file');

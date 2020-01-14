@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\User;
 use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
@@ -15,7 +16,8 @@ class SuperAdminController extends Controller
     public function index()
     {
         $student =Student::count();
-        return view('backend.index',['student' =>$student]);
+        $teacher =User::where('role','teacher')->count();
+        return view('backend.index',['student' =>$student,'teacher'=>$teacher]);
     }
 
     /**
