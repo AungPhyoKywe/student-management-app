@@ -17,18 +17,18 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table table-striped table-bordered nowrap" style="width:100%">
+                            <table id="example2" class="table   table-responsive  nowrap"style="width: 100%;" >
                                 <thead>
                                 <tr>
-                                    <th>image</th>
-                                    <th>name</th>
-                                    <th>age</th>
-                                    <th>gender</th>
-                                    <th>father's name</th>
-                                    <th>reglious</th>
-                                    <th>Dath of birth</th>
-                                    <th>phone</th>
-                                    <th>address</th>
+                                    <th>Student Image</th>
+                                    <th>Student Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Father's Name</th>
+                                    <th>Reglious</th>
+                                    <th>Dath of Birth</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -68,18 +68,46 @@
     <script>
     $(document).ready( function () {
 
-        $('#example2').DataTable(
+        $('#example2').DataTable({
 
-            {
-                responsive: true,
-                columnDefs: [
-                    { responsivePriority: 1, targets: 0 },
-                    { responsivePriority: 10001, targets: 4 },
-                    { responsivePriority: 2, targets: -2 }
-                ]
+            "lengthChange": true,
+            "processing": true,
+            dom: 'lBfrtip',
+            buttons: [
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
+                ,
+                {
+                    extend: 'pdf',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
+                ,
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
+            ],
+            initComplete: function () {
+                var btns = $('.dt-button');
+                btns.addClass('btn btn-light btn-sm');
+                btns.removeClass('dt-button');
 
             }
-        );
+        });
     });
 
     function confirmation($id) {

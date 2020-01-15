@@ -21,14 +21,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page"style="background-color: #b3b7bb ">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <b>Schools</b>Management
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body">
+        <div class="card-body">
             <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
 
             <form method="POST" action="{{ route('password.update') }}">
@@ -74,6 +74,8 @@
 
         </div>
     </div>
+</div>
+
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>

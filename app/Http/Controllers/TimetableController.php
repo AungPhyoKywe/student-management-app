@@ -80,8 +80,9 @@ class TimetableController extends Controller
         ->select('table_timetables.id','users.name','table_classes.class_name','table_timetables.date','table_timetables.start_time','table_timetables.end_time')
         ->join('table_classes','table_classes.class_id','=','table_timetables.class_id')
         ->join('users','users.id','=','table_timetables.teacher_id')
-        ->where('users.id',$id)
+        ->where('table_timetables.id',$id)
         ->get();
+
         $teacher=User::where('role','teacher')->pluck('id','name');
         $class= Classes::pluck('class_id','class_name');
         return view('backend.timetable.edit',['class'=>$class,'teacher'=>$teacher,'timetable'=>$timetable]);

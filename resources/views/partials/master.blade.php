@@ -4,6 +4,7 @@
 
 @include('partials.sidebar');
 
-@yield('content')
+@yield('content');
+
 
 

@@ -54,15 +54,20 @@ class StudentController extends Controller
         $student->reglious=$request->reglious;
         $student->ph_no=$request->phone;
         $student->address=$request->address;
-        $filename=null;
+
         if($request->hasfile('file'))
         {
             $file = $request->file('file');
             $extension = $file->getClientOriginalExtension(); // getting image extension
             $filename =time().'.'.$extension;
             $file->move('uploads/logos/', $filename);
+            $student->profile_image=$filename;
+        }else{
+            $filename='student.png';
+            $student->profile_image=$filename;
+
         }
-        $student->profile_image=$filename;
+
         $student->save();
 
         return redirect('/student');
