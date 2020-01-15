@@ -51,15 +51,19 @@ class TeacherController extends Controller
         $user->ph_no=$request->phone;
         $user->address=$request->address;
         $user->role='teacher';
-        $filename=null;
+
         if($request->hasfile('file'))
         {
             $file = $request->file('file');
             $extension = $file->getClientOriginalExtension(); // getting image extension
             $filename =time().'.'.$extension;
             $file->move('uploads/teacher/', $filename);
+            $user->profile_image=$filename;
+        }else{
+           $filename='teacher.png';
+           $user->profile_image=$filename;
         }
-        $user->profile_image=$filename;
+
         $user->save();
 
         return  redirect('/teacher');
