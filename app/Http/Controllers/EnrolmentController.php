@@ -72,7 +72,15 @@ class EnrolmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $enrol=DB::table('enrolments')
+            ->select('enrolments.id','table_classes.class_name','table_students.name','enrolments.enrolment_date')
+            ->join('table_classes','table_classes.class_id','=','enrolments.class_id')
+            ->join('table_students','table_students.id','=','enrolments.student_id')
+            ->where('enrolments.id',$id)
+            ->get();
+        $class = Classes::pluck('class_id','class_name');
+        $student= Student::pluck('id','name');
+        return  view('backend.enrolment.edit',['enrol'=>$enrol,'class'=>$class,'student'=>$student]);
     }
 
     /**
