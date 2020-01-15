@@ -68,7 +68,20 @@
     <script>
     $(document).ready( function () {
 
-        $('#example2').DataTable();
+        $('#example2').DataTable({
+
+            "lengthChange": true,
+            dom: 'lBfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            initComplete: function () {
+                var btns = $('.dt-button');
+                btns.addClass('btn btn-light btn-sm');
+                btns.removeClass('dt-button');
+
+            }
+        });
     });
 
     function confirmation($id) {

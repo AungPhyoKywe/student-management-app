@@ -56,7 +56,7 @@
 
                     </ul>
                 </li>
-
+                @if(Auth::user()->role =='superadmin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-chalkboard-teacher"></i>
@@ -81,6 +81,7 @@
 
                     </ul>
                 </li>
+                @endif
                 <li class="nav-item has-treeview">
                     <a href="{{route('enroll.index')}}" class="nav-link">
                         <i class="fas fa-book-open"></i>
@@ -234,12 +235,14 @@
                                 <p>Student report</p>
                             </a>
                         </li>
+                        @if(Auth::user()->role =='superadmin')
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Teachers report</p>
                             </a>
                         </li>
+                        @endif
 
                     </ul>
                 </li>
