@@ -71,9 +71,35 @@
         $('#example2').DataTable({
 
             "lengthChange": true,
+            "processing": true,
             dom: 'lBfrtip',
             buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
+                ,
+                {
+                    extend: 'pdf',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
+                ,
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [  1, 2,3,4,5,6,7,8 ]
+                    }
+                }
             ],
             initComplete: function () {
                 var btns = $('.dt-button');
