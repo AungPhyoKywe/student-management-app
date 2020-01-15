@@ -17,7 +17,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table table-striped table-bordered nowrap" style="width:100%">
+                            <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
                                 <tr>
                                     <th>image</th>
