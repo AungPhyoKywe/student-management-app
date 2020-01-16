@@ -20,10 +20,13 @@
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
                                 <tr>
-                                    <th>image</th>
-                                    <th>name</th>
-                                    <th>phone</th>
-                                    <th>address</th>
+                                    <th>Teacher Image</th>
+                                    <th>Teacher Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -33,6 +36,9 @@
                                         <tr>
                                             <td><img class="rounded-circle" src="/uploads/teacher/{{$u->profile_image}}"width="40"height="40"></td>
                                             <td>{{$u->name}}</td>
+                                            <td>{{$u->age}}</td>
+                                            <td>{{$u->gender}}</td>
+                                            <td>{{$u->DOB}}</td>
                                             <td>{{$u->ph_no}}</td>
                                             <td>{{$u->address}}</td>
                                             <td>

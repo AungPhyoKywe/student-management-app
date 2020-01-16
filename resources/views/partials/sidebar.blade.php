@@ -153,6 +153,29 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
+                        <i class="fas fa-school"></i>
+                        <p>Class
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Class List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Class Add</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="fas fa-bookmark"></i>
                         <p>Subjects
                             <i class="right fas fa-angle-left"></i>

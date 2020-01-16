@@ -53,7 +53,39 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Age:</strong>
+                                                                    <input type="text"
+                                                                           name="age"
+                                                                           value="{{ old('name') }}"
+                                                                           placeholder="Age"
+                                                                           class="form-control"
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Gender:</strong>
+                                                                    <select class="form-control" name="gender">
+                                                                        <option  value="male">Male</option>
+                                                                        <option  value="female">Female</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Date Of Birth:</strong>
+                                                                    <input class="form-control"name="dob"type="date">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
