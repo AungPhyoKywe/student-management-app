@@ -19,6 +19,7 @@ Route::get('/backend','SuperAdminController@index');
 
 //student
 Route::get('/student/getdata','StudentController@getData')->name('student.getData');
+Route::resource('class','ClassController');
 Route::resource('student','StudentController');
 Route::resource('teacher','TeacherController');
 Route::resource('timetable','TimetableController');
@@ -27,6 +28,7 @@ Route::get('/students/{id}','StudentController@destroy');
 Route::get('/teachers/{id}','TeacherController@destroy');
 Route::get('/timetables/{id}','TimetableController@destroy');
 Route::get('/enrolls/{id}','EnrolmentController@destroy');
+Route::get('/classes/{id}','ClassController@destroy');
 
 Auth::routes();
 

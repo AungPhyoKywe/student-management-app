@@ -9,6 +9,6 @@ class Classes extends Model
     protected $table='table_classes';
 
     protected $fillable = [
-        'class_id', 'class_name'
+        'class_id', 'class_name','class_teacher'
     ];
 }

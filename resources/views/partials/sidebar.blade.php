@@ -160,13 +160,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('class.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Class List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('class.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Class Add</p>
                             </a>
