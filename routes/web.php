@@ -24,6 +24,7 @@ Route::resource('student','StudentController');
 Route::resource('teacher','TeacherController');
 Route::resource('timetable','TimetableController');
 Route::resource('enroll','EnrolmentController');
+Route::resource('subject','SubjectController');
 Route::get('/students/{id}','StudentController@destroy');
 Route::get('/teachers/{id}','TeacherController@destroy');
 Route::get('/timetables/{id}','TimetableController@destroy');
