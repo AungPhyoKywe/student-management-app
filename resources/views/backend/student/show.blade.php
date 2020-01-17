@@ -1,3 +1,4 @@
+@include('partials.loading')
 @extends('partials.master')
 
 @section('content')
@@ -64,6 +65,7 @@
             </div>
         </section>
     </div>
+    <div id="loading"></div>
 
     <script>
     $(document).ready( function () {
