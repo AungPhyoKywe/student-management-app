@@ -38,8 +38,7 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2019-12-04T15:06:13+00:00"
-<<<<<<< HEAD
-=======
+
         },
         {
             "name": "doctrine/cache",
@@ -290,7 +289,6 @@
                 "events"
             ],
             "time": "2019-11-10T09:48:07+00:00"
->>>>>>> fc388a2f07745c425a7a4cba92a4652fc872125f
         },
         {
             "name": "doctrine/inflector",
