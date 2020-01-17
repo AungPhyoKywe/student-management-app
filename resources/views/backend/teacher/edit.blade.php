@@ -55,7 +55,48 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Age:</strong>
+                                                                    <input type="text"
+                                                                           name="age"
+                                                                           value="{{ $user[0]->age }}"
+                                                                           placeholder="Name"
+                                                                           class="form-control"
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Gender:</strong>
+                                                                    <input type="text"
+                                                                           name="gender"
+                                                                           value="{{ $user[0]->gender }}"
+                                                                           placeholder="Name"
+                                                                           class="form-control"
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Data Of Birth:</strong>
+                                                                    <input type="date"
+                                                                           name="dob"
+                                                                           value="{{ $user[0]->DOB }}"
+                                                                           placeholder="Name"
+                                                                           class="form-control"
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">

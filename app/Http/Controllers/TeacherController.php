@@ -39,6 +39,7 @@ class TeacherController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'dob'=>'required',
             'email' => 'required|email|unique:users,email|max:255',
             'password' => 'required|same:confirm-password|max:255',
             'phone' => 'required',
@@ -46,6 +47,9 @@ class TeacherController extends Controller
         ]);
         $user=new User();
         $user->name=$request->name;
+        $user->age=$request->age;
+        $user->gender=$request->gender;
+        $user->DOB=$request->dob;
         $user->email=$request->email;
         $user->password=bcrypt($request->password);
         $user->ph_no=$request->phone;
@@ -110,6 +114,9 @@ class TeacherController extends Controller
         ]);
         $user=User::find($id);
         $user->name=$request->name;
+        $user->age=$request->age;
+        $user->gender=$request->gender;
+        $user->DOB=$request->dob;
         $user->email=$request->email;
         $user->password=bcrypt($request->password);
         $user->ph_no=$request->phone;
