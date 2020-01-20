@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -23,7 +24,8 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        $teacher =User::where('role','teacher')->pluck('id','name');
+        return view('backend.subject.create',['teacher'=>$teacher]);
     }
 
     /**

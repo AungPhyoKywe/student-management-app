@@ -12,7 +12,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Create TimeTable</h3>
+                            <h3 class="card-title">Create Subject</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -36,15 +36,27 @@
                                                 <div class="container">
 
                                                     <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" method="POST" action="{{ route('timetable.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                    <form name="studentForm" id="studentForm" method="POST" action="{{ route('subject.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                                                         {!! csrf_field() !!}
 
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Teacher:</strong>
+                                                                    <strong>Subject Name:</strong>
+                                                                    <input class="form-control"
+                                                                           type="text"
+                                                                            name="subject_name"
+                                                                            data-parsley-required="true"
+                                                                            data-parsley-maxlength="255">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <strong>Subject Teacher:</strong>
                                                                     <select class="form-control"
-                                                                            name="teacher"
+                                                                            name="subject_teacher"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
 
@@ -55,71 +67,13 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Class:</strong>
-                                                                    <select class="form-control"
-                                                                            name="class"
-                                                                            data-parsley-required="true"
-                                                                            data-parsley-maxlength="255">
-
-                                                                        @foreach($class as $key => $classes)
-                                                                            <option value="{{ $classes }}">{{ $key }}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Date:</strong>
-                                                                    <input type="date"
-                                                                           name="date"
-                                                                           value="{{ old('phone') }}"
-                                                                           placeholder="phone"
-                                                                           class="form-control"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Start Time:</strong>
-                                                                    <input type="time"
-                                                                           name="start_time"
-                                                                           value="address"
-                                                                           placeholder="address"
-                                                                           class="form-control"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>End Time:</strong>
-                                                                    <input type="time"
-                                                                           name="end_time"
-                                                                           value="end_time"
-                                                                           placeholder="End Time"
-                                                                           class="form-control"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
 
                                                         <div class="row">
                                                             <div class="col-lg-12 margin-tb">
                                                                 <div class="pull-left">
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a class="btn btn-warning" href="{{route('timetable.index')}}"> Back to Listing</a>
+                                                                    <a class="btn btn-warning" href="{{route('subject.index')}}"> Back to Listing</a>
                                                                     <button type="submit" class="btn btn-success">Save</button>
                                                                 </div>
                                                             </div>
@@ -142,19 +96,5 @@
             </div>
         </section>
     </div>
-    <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#profile-img-tag').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#profile-img").change(function(){
-            readURL(this);
-        });
-    </script>
 @stop
