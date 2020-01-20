@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Attendance;
 use App\Classes;
 use App\Enroll;
 use Illuminate\Http\Request;
@@ -38,7 +39,21 @@ class AttController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->input());
+        $attend=new Attendance();
+        $class=$request->class;
+        $date=$request->date;
+        $result=$request->input('qty');
+        //dd($result);
+        //dd($request->input('qty'));
+       foreach ($result as $key => $value)
+       {
+           $attend->student_id= $key;
+           $attend->status=$value;
+           $attend->date=$date;
+
+       }
+       $attend->save();
+       return view('backend.attendance.show');
     }
 
     /**

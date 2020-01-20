@@ -18,6 +18,8 @@
                         <!-- /.card-header -->
                         <form name="studentForm" id="studentForm" method="POST" action="{{ route('att.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                             {!! csrf_field() !!}
+                            <input type="text"value="{{$class_id}}" name="class">
+                            <input type="text"value="{{$date}}"name="date">
                         <div class="card-body">
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
@@ -40,13 +42,13 @@
 
                                             <!-- Material inline 2 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline2" value="absent"name="{{ $e->id }}">
+                                                <input type="radio" class="form-check-input" id="materialInline2" value="absent"name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline2">absent</label>
                                             </div>
 
                                             <!-- Material inline 3 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline3" value="late"name="{{ $e->id }}">
+                                                <input type="radio" class="form-check-input" id="materialInline3" value="late" name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline3">late</label>
                                             </div>
 
