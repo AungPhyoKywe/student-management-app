@@ -16,6 +16,8 @@
                             <h3 class="card-title">Add Student Attendance</h3>
                         </div>
                         <!-- /.card-header -->
+                        <form name="studentForm" id="studentForm" method="POST" action="{{ route('att.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                            {!! csrf_field() !!}
                         <div class="card-body">
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
@@ -32,19 +34,19 @@
                                         <td>
                                             <!-- Material inline 1 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline1" name="inlineMaterialRadiosExample">
+                                                <input type="radio" class="form-check-input"  value="present" name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline1">present</label>
                                             </div>
 
                                             <!-- Material inline 2 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline2" name="inlineMaterialRadiosExample">
+                                                <input type="radio" class="form-check-input" id="materialInline2" value="absent"name="{{ $e->id }}">
                                                 <label class="form-check-label" for="materialInline2">absent</label>
                                             </div>
 
                                             <!-- Material inline 3 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline3" name="inlineMaterialRadiosExample">
+                                                <input type="radio" class="form-check-input" id="materialInline3" value="late"name="{{ $e->id }}">
                                                 <label class="form-check-label" for="materialInline3">late</label>
                                             </div>
 
@@ -57,11 +59,13 @@
                             </table>
                             <div>
                                 <a href="{{route('att.create')}}"class="btn btn-warning">Back</a>
-                                <button class="btn btn-success">Save Attendance</button>
+                                <button type="submit" class="btn btn-success">Save Attendance</button>
                             </div>
                         </div>
                         <!-- /.card-body -->
+                        </form>
                     </div>
+
                     <!-- /.card -->
                 </div>
                 <!-- /.card -->

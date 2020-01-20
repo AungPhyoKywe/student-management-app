@@ -38,7 +38,7 @@ class AttController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->input());
     }
 
     /**
@@ -49,7 +49,7 @@ class AttController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -89,13 +89,14 @@ class AttController extends Controller
     public function search(Request $request)
     {
         $class_id=$request->class;
+        $date=$request->date;
         $class=DB::table('enrolments')
-            ->select('table_students.name')
+            ->select('table_students.name','table_students.id')
             ->join('table_students','enrolments.student_id','=','table_students.id')
             ->where('enrolments.class_id',$class_id)
             ->get();
         //dd([$class]);
-        return view('backend.attendance.list')->with('class',$class);
+        return view('backend.attendance.list',['class'=>$class,'class_id'=>$class_id,'date'=>$date]);
 
         ;
 

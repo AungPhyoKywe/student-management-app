@@ -255,7 +255,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('att.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Attendence List</p>
                             </a>
