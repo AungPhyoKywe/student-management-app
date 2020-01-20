@@ -39,7 +39,7 @@
                 window.clearInterval(intervalId);
                 callback.call(this);
             }
-        }, 2000);
+        }, 1000);
     }
     function setVisible(selector, visible) {
         document.querySelector(selector).style.display = visible ? 'block' : 'none';
