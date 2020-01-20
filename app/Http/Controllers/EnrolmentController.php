@@ -33,8 +33,8 @@ class EnrolmentController extends Controller
     public function create()
     {
         $class = Classes::pluck('class_id','class_name');
-        $student= Student::select('*');
-        dd($student);
+        $student= Student::pluck('id','name');
+
         return view('backend.enrolment.create',['class'=>$class,'student'=>$student]);
     }
 
