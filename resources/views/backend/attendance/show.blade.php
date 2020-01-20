@@ -29,19 +29,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                @foreach($class as $e)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $e->class_name }}</td>--}}
-{{--                                        <td>{{ $e->name }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{route('class.edit',$e->class_id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>--}}
-{{--                                            <a href="#" onclick="confirmation({{ $e->class_id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
+                                @foreach($attend as $e)
+                                    <tr>
+                                        <td>{{ $e->name }}</td>
+                                        <td>{{ $e->class_name }}</td>
+                                        <td>{{ $e->status }}</td>
+                                        <td>{{ $e->date }}</td>
+                                        <td>
+                                            <a href="{{route('att.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                                 </tbody>
-
+                                <tfoot>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Class Name</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                                </tfoot>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -53,38 +62,64 @@
 
         </section>
     </div>
-
     <script>
-        $(document).ready( function () {
-
-            $('#example2').DataTable();
-        });
-
-        function confirmation($id) {
-            swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
-                icon: "warning",
+        $(document).ready(function() {
+            $('#example2').DataTable( {
+                "responsive":true,
+                "processing": true,
+                dom: 'lBfrtip',
                 buttons: [
-                    'No, cancel it!',
-                    'Yes, I am sure!'
+                    {
+                        extend: 'csv',
+                        exportOptions: {
+                            columns: [ 0, 1, 2,3]
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        exportOptions: {
+                            columns: [ 0, 1, 2,3 ]
+                        }
+                    }
+                    ,
+                    {
+                        extend: 'pdf',
+                        exportOptions: {
+                            columns: [ 0, 1, 2,3]
+                        }
+                    }
+                    ,
+                    {
+                        extend: 'print',
+                        exportOptions: {
+                            columns: [ 0, 1, 2,3 ]
+                        }
+                    }
                 ],
-                dangerMode: true,
-            }).then(function(isConfirm) {
-                if (isConfirm) {
-                    swal({
-                        title: 'Shortlisted!',
-                        text: 'Candidates are successfully shortlisted!',
-                        icon: 'success'
-                    }).then(function () {
-                        window.location.href='/classes/'+$id;
-                    })
-                } else {
-                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                initComplete: function () {
+                    var btns = $('.dt-button');
+                    btns.addClass('btn btn-light btn-sm');
+                    btns.removeClass('dt-button');
+                    this.api().columns().every( function () {
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                            .appendTo( $(column.footer()).empty() )
+                            .on( 'change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+
+                                column
+                                    .search( val ? '^'+val+'$' : '', true, false )
+                                    .draw();
+                            } );
+
+                        column.data().unique().sort().each( function ( d, j ) {
+                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                        } );
+                    } );
                 }
-            })
-
-        }
-
+            } );
+        } );
     </script>
 @stop

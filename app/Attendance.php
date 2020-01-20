@@ -9,6 +9,6 @@ class Attendance extends Model
     protected $table='attendance';
 
     protected $fillable = [
-        'student_id', 'status','date'
+        'student_id','class_id', 'status','date'
     ];
 }

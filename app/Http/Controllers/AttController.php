@@ -7,6 +7,7 @@ use App\Classes;
 use App\Enroll;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class AttController extends Controller
 {
@@ -17,7 +18,12 @@ class AttController extends Controller
      */
     public function index()
     {
-        return view('backend.attendance.show');
+        $attend=DB::table('attendance')
+            ->select('attendance.id','table_students.name','table_classes.class_name','attendance.status','attendance.date')
+            ->join('table_students','attendance.student_id','=','table_students.id')
+            ->join('table_classes','table_classes.class_id','=','attendance.class_id')
+            ->get();
+        return view('backend.attendance.show',['attend'=>$attend]);
     }
 
     /**
@@ -39,21 +45,22 @@ class AttController extends Controller
      */
     public function store(Request $request)
     {
-        $attend=new Attendance();
+
         $class=$request->class;
         $date=$request->date;
-        $result=$request->input('qty');
-        //dd($result);
+        $result=$request->qty;
         //dd($request->input('qty'));
        foreach ($result as $key => $value)
        {
+           $attend=new Attendance();
            $attend->student_id= $key;
            $attend->status=$value;
            $attend->date=$date;
+           $attend->class_id=$class;
+           $attend->save();
 
        }
-       $attend->save();
-       return view('backend.attendance.show');
+       return redirect('/att');
     }
 
     /**
