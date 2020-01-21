@@ -68,7 +68,13 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subject =DB::table('subject')
+            ->select('subject.id','subject.subject_name','users.name')
+            ->join('users','subject.teacher_id','=','users.id')
+            ->where('subject.id',$id)
+            ->get();
+        $teacher =User::where('role','teacher')->pluck('id','name');
+        return view('backend.subject.edit',['teacher'=>$teacher,'subject'=>$subject]);
     }
 
     /**
@@ -80,7 +86,12 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request->all());
+        $subject =Subject::find($id);
+        $subject->subject_name=$request->subject_name;
+        $subject->teacher_id=$request->subject_teacher;
+        $subject->save();
+        return redirect('/subject');
     }
 
     /**
