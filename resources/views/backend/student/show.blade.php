@@ -18,7 +18,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table   table-responsive  nowrap"style="width: 100%;" >
+                            <table id="example2" class="table  table-responsive  nowrap"style="width: 100%;" >
                                 <thead>
                                 <tr>
                                     <th>Student Image</th>
@@ -100,6 +100,12 @@
                     exportOptions: {
                         columns: [  1, 2,3,4,5,6,7,8 ]
                     }
+                },
+                {
+                    extend: 'colvis',
+                    columns: ':not(:first-child)'
+
+
                 }
             ],
             initComplete: function () {
@@ -108,7 +114,10 @@
                 btns.removeClass('dt-button');
 
             }
+
         });
+        table.buttons().container()
+            .appendTo( '#example_wrapper .col-md-6:eq(0)' );
     });
 
     function confirmation($id) {
