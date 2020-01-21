@@ -13,7 +13,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Class List</h3>
+                            <h3 class="card-title">Subject List</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -27,6 +27,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($subject as $s)
+                                <tr>
+                                    <td>{{$s->subject_name}}</td>
+                                    <td>{{$s->name}}</td>
+                                    <td>
+                                        <a href="{{route('subject.edit',$s->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                        <a href="#" onclick="confirmation({{ $s->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
 
 
                                 </tbody>
@@ -66,7 +76,7 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/classes/'+$id;
+                        window.location.href='/subjects/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

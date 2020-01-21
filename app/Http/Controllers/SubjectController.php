@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
 {
@@ -14,7 +16,11 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        return  view('backend.subject.show');
+        $subject=DB::table('subject')
+            ->select('subject.id','subject.subject_name','users.name')
+            ->join('users','subject.teacher_id','=','users.id')
+            ->get();
+        return  view('backend.subject.show',['subject'=>$subject]);
     }
 
     /**
@@ -36,7 +42,11 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subject =new Subject();
+        $subject->subject_name=$request->subject_name;
+        $subject->teacher_id=$request->subject_teacher;
+        $subject->save();
+        return redirect('/subject');
     }
 
     /**

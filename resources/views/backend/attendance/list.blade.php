@@ -18,8 +18,12 @@
                         <!-- /.card-header -->
                         <form name="studentForm" id="studentForm" method="POST" action="{{ route('att.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                             {!! csrf_field() !!}
+
+                            <label>Class ID:</label>
                             <input type="text"value="{{$class_id}}" name="class">
-                            <input type="text"value="{{$date}}"name="date">
+                            <label>Date:</label>
+                            <input type="date"value="{{$date}}"name="date">
+
                         <div class="card-body">
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
