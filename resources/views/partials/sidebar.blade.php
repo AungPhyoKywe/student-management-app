@@ -137,13 +137,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('exam.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Exam List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('exam.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Exam Add</p>
                             </a>
