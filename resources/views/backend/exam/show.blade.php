@@ -67,7 +67,55 @@
     <script>
         $(document).ready( function () {
 
-            $('#example2').DataTable();
+            $('#example2').DataTable({
+
+                "lengthChange": true,
+                "processing": true,
+                dom: 'lBfrtip',
+                buttons: [
+                    {
+                        extend: 'csv',
+                        exportOptions: {
+                            columns: [  1, 2,3,4,5,6,7,8 ]
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        exportOptions: {
+                            columns: [  1, 2,3,4,5,6,7,8 ]
+                        }
+                    }
+                    ,
+                    {
+                        extend: 'pdf',
+                        exportOptions: {
+                            columns: [  1, 2,3,4,5,6,7,8 ]
+                        }
+                    }
+                    ,
+                    {
+                        extend: 'print',
+                        exportOptions: {
+                            columns: [  1, 2,3,4,5,6,7,8 ]
+                        }
+                    },
+                    {
+                        extend: 'colvis',
+                        columns: ':not(:first-child)'
+
+
+                    }
+                ],
+                initComplete: function () {
+                    var btns = $('.dt-button');
+                    btns.addClass('btn btn-light btn-sm');
+                    btns.removeClass('dt-button');
+
+                }
+
+            });
+            table.buttons().container()
+                .appendTo( '#example_wrapper .col-md-6:eq(0)' );
         });
 
         function confirmation($id) {
