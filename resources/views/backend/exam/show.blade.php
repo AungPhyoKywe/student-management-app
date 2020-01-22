@@ -42,7 +42,8 @@
                                         <td>{{ $e->start_time }}</td>
                                         <td>{{ $e->end_time }}</td>
                                         <td>
-                                            <a href="/uploads/question/{{ $e->question_file }}" class="btn-sm btn-primary"><i class="fas fa-download"></i></a>
+                                            <a href="/download/{{ $e->question_file }}"class="btn-sm btn-primary"><i class="fas fa-download"></i></a>
+                                            <a href="/uploads/question/{{ $e->question_file }}" class="btn-sm btn-primary" target="_blank"><i class="fas fa-eye"></i></a>
                                             <a href="{{route('exam.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                             <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                         </td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes;
 use App\Exam;
 use App\Subject;
+use Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -117,4 +118,15 @@ class ExamController extends Controller
     {
         //
     }
+    public function download($file)
+    {
+        $file= public_path(). "/uploads/question/".$file;
+
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+
+        return Response::download($file, 'question.pdf', $headers);
+    }
+
 }
