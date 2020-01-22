@@ -14,7 +14,7 @@ Route::get('/',function (){
     return redirect('/login');
 });
 //superadmin
-Route::group(['middleware' => ['login']], function() {
+Route::group(['middleware' => ['auth']], function() {
     Route::get('/backend', 'SuperAdminController@index');
 
 
