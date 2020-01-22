@@ -49,7 +49,10 @@
                                                                                id="customControlValidation2"
                                                                                required
                                                                                >
-                                                                            <option></option>
+                                                                            <option value="">Open this select menu</option>
+                                                                            @foreach($class as $key =>$value)
+                                                                                <option value="{{$value}}">{{$key}}</option>
+                                                                            @endforeach
                                                                         </select>
                                                                         <div class="invalid-feedback">Example invalid feedback text</div>
                                                                     </div>
@@ -62,7 +65,10 @@
                                                                             required
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
-                                                                        <option></option>
+                                                                        <option value="">Open this select menu</option>
+                                                                        @foreach($subject as $key =>$value)
+                                                                        <option value="{{$value}}">{{$key}}</option>
+                                                                        @endforeach
                                                                     </select>
                                                                     <div class="invalid-feedback">Example invalid feedback text</div>
                                                                 </div>
@@ -70,7 +76,7 @@
                                                                 <strong>Upload Question:</strong>
                                                                 <div class="custom-file">
 
-                                                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                                    <input type="file" name="file" class="custom-file-input" id="validatedCustomFile" required>
                                                                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                                 </div>
@@ -81,7 +87,7 @@
                                                                     <strong>Exam Date:</strong>
                                                                     <input class="form-control"
                                                                            type="date"
-                                                                            name="exam_name"
+                                                                            name="exam_date"
                                                                             id="customControlValidation2"
                                                                             required
                                                                             data-parsley-required="true"
@@ -127,10 +133,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
-
-
 
                                                         <div class="row">
                                                             <div class="col-lg-12 margin-tb">

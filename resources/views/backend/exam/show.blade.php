@@ -25,7 +25,6 @@
                                     <th>Class</th>
                                     <th>Subject</th>
                                     <th>Exam Date</th>
-                                    <th>Question File</th>
                                     <th>Start Time</th>
                                     <th>End Time</th>
                                     <th>Action</th>
@@ -33,16 +32,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                @foreach($class as $e)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $e->class_name }}</td>--}}
-{{--                                        <td>{{ $e->name }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{route('class.edit',$e->class_id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>--}}
-{{--                                            <a href="#" onclick="confirmation({{ $e->class_id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
+                                @foreach($exam as $e)
+                                    <tr>
+                                        <td>{{ $e->name }}</td>
+                                        <td>{{ $e->description }}</td>
+                                        <td>{{ $e->class_name }}</td>
+                                        <td>{{ $e->subject_name }}</td>
+                                        <td>{{ $e->exam_date }}</td>
+                                        <td>{{ $e->start_time }}</td>
+                                        <td>{{ $e->end_time }}</td>
+                                        <td>
+                                            <a href="/uploads/question/{{ $e->question_file }}" class="btn-sm btn-primary"><i class="fas fa-download"></i></a>
+                                            <a href="{{route('exam.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                                 </tbody>
 
