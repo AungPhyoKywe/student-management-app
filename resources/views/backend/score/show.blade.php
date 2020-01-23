@@ -13,41 +13,59 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Exam List</h3>
+                            <h3 class="card-title">Class List</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
                                 <tr>
+                                    <th>Student Name</th>
                                     <th>Exam Name</th>
-                                    <th>Description</th>
-                                    <th>Class</th>
-                                    <th>Subject</th>
-                                    <th>Exam Date</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
+                                    <th>Score</th>
+                                    <th>Status</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($exam as $e)
-                                    <tr>
+                                @foreach($score as $e)
+                                    @if($e->Status == 'Pass')
+                                    <tr class="table-success">
+                                        <td>{{ $e->name }}</td>
                                         <td>{{ $e->exam_name }}</td>
-                                        <td>{{ $e->description }}</td>
-                                        <td>{{ $e->class_name }}</td>
-                                        <td>{{ $e->subject_name }}</td>
-                                        <td>{{ $e->exam_date }}</td>
-                                        <td>{{ $e->start_time }}</td>
-                                        <td>{{ $e->end_time }}</td>
+                                        <td>{{ $e->Score }}</td>
+                                        <td>{{ $e->Status }}</td>
                                         <td>
-                                            <a href="/download/{{ $e->question_file }}"class="btn-sm btn-primary"><i class="fas fa-download"></i></a>
-                                            <a href="/uploads/question/{{ $e->question_file }}" class="btn-sm btn-primary" target="_blank"><i class="fas fa-eye"></i></a>
-                                            <a href="{{route('exam.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                             <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
+                                    @endif
+                                    @if($e->Status == 'Fail')
+                                        <tr class="table-danger">
+                                            <td>{{ $e->name }}</td>
+                                            <td>{{ $e->exam_name }}</td>
+                                            <td>{{ $e->Score }}</td>
+                                            <td>{{ $e->Status }}</td>
+                                            <td>
+                                                <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @if($e->Status == 'Qualify')
+                                        <tr class="table-primary">
+                                            <td>{{ $e->name }}</td>
+                                            <td>{{ $e->exam_name }}</td>
+                                            <td>{{ $e->Score }}</td>
+                                            <td>{{ $e->Status }}</td>
+                                            <td>
+                                                <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
 
                                 </tbody>
@@ -135,7 +153,7 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/classes/'+$id;
+                        window.location.href='/scores/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Attendance;
-use App\Classes;
-use App\Enroll;
 use App\Exam;
+use App\Score;
 use App\Student;
-use App\Subject;
-use App\Timetable;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class SuperAdminController extends Controller
+class ScoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,22 +17,13 @@ class SuperAdminController extends Controller
      */
     public function index()
     {
-        $student =Student::count();
-        $exam=Exam::count();
-        $att=Attendance::count();
-        $subject=Subject::count();
-        $enrol= Enroll::count();
-        $time=Timetable::count();
-        $class=Classes::count();
-        $teacher =User::where('role','teacher')->count();
-        return view('backend.index',
-            [   'student' =>$student,'teacher'=>$teacher,
-                'time'=>$time,'enrol'=>$enrol,
-                'exam'=>$exam,'class'=>$class,
-                'subject'=>$subject,'att'=>$att
+        $score=DB::table('score')
+            ->select('score.id','table_students.name','exam.exam_name','score.Score','score.Status')
+            ->join('table_students','table_students.id','=','score.student_id')
+            ->join('exam','exam.id','=','score.exam_id')
+            ->get();
 
-
-            ]);
+        return view('backend.score.show',['score'=>$score]);
     }
 
     /**
@@ -46,7 +33,9 @@ class SuperAdminController extends Controller
      */
     public function create()
     {
-        //
+        $student=Student::pluck('id','name');
+        $exam=Exam::pluck('id','exam_name');
+        return view('backend.score.create',['student'=>$student,'exam'=>$exam]);
     }
 
     /**
@@ -57,7 +46,28 @@ class SuperAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // dd($request->all());
+        $score =new Score();
+        $score->student_id=$request->student;
+        $score->exam_id=$request->exam;
+        $score->Score=$request->score;
+        if ($request->score < 40)
+        {
+            $score->Status='Fail';
+        }
+        if ($request->score > 40)
+        {
+            $score->Status='Pass';
+        }
+        if ($request->score > 80)
+        {
+            $score->Status='Qualify';
+        }
+
+        $score->save();
+
+        return redirect('/score');
+
     }
 
     /**
@@ -102,6 +112,9 @@ class SuperAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $score=Score::find($id);
+        $score->delete();
+        return redirect('/score');
+
     }
 }

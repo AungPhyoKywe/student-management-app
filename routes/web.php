@@ -36,7 +36,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');
 
-
+    Route::resource('score','ScoreController');
     Route::resource('timetable', 'TimetableController');
     Route::resource('enroll', 'EnrolmentController');
     Route::resource('subject', 'SubjectController');
@@ -45,7 +45,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::get('/download/{file}', 'ExamController@download');
     Route::post('/search', 'AttController@search')->name('search');
     Route::get('/students/{id}', 'StudentController@destroy');
-
+    Route::get('/scores/{id}','ScoreController@destroy');
     Route::get('/timetables/{id}', 'TimetableController@destroy');
     Route::get('/enrolls/{id}', 'EnrolmentController@destroy');
     Route::get('/classes/{id}', 'ClassController@destroy');

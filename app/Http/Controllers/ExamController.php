@@ -19,7 +19,7 @@ class ExamController extends Controller
     public function index()
     {
         $exam =DB::table('exam')
-            ->select('exam.id','exam.name','exam.description','exam.question_file','table_classes.class_name'
+            ->select('exam.id','exam.exam_name','exam.description','exam.question_file','table_classes.class_name'
                 ,'subject.subject_name','exam.exam_date',
                 'exam.start_time','exam.end_time')
             ->join('table_classes','table_classes.class_id','=','exam.class_id')
@@ -50,7 +50,7 @@ class ExamController extends Controller
     {
         //dd($request->all());
         $exam = new Exam();
-        $exam->name = $request->exam_name;
+        $exam->exam_name = $request->exam_name;
         $exam->description = $request->description;
         $exam->class_id = $request->class_name;
         $exam->subject_id = $request->subject_name;

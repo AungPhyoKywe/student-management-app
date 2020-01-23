@@ -200,21 +200,21 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-book-open"></i>
-                        <p>Student Marks
+                        <p>Score
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('score.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Marks List</p>
+                                <p>Score List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('score.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Marks Add</p>
+                                <p>Score Add</p>
                             </a>
                         </li>
 

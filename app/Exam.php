@@ -9,6 +9,6 @@ class Exam extends Model
     protected $table='exam';
 
     protected $fillable = [
-        'name', 'description','question_file','class_id','subject_id','exam_date', 'start_time','end_time'
+        'exam_name', 'description','question_file','class_id','subject_id','exam_date', 'start_time','end_time'
     ];
 }
