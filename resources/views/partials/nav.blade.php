@@ -27,7 +27,15 @@
                     </div>
                 </div>
             </form>
-
+            <select class="selectpicker" data-width="fit">
+                <option data-content='<img src="#"> English'>English</option>
+                <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
+            </select>
+            <script>
+                $(function(){
+                    $('.selectpicker').selectpicker();
+                });
+            </script>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
