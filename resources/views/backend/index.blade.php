@@ -14,7 +14,7 @@
                                 <span class="info-box-number">{{$student}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$student}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($student / 100)*100}}% Increase in 30 Days
@@ -35,7 +35,7 @@
                                 <span class="info-box-number">{{$teacher}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$teacher}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($teacher / 100)*100}}% Increase in 30 Days
@@ -56,7 +56,7 @@
                                 <span class="info-box-number">{{$time}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$time}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($time / 100)*100}}% Increase in 30 Days
@@ -80,7 +80,7 @@
                                 <span class="info-box-number">{{$enrol}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$enrol}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($enrol / 100)*100}}% Increase in 30 Days
@@ -100,7 +100,7 @@
                                 <span class="info-box-number">{{$exam}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$exam}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($exam / 100)*100}}% Increase in 30 Days
@@ -120,7 +120,7 @@
                                 <span class="info-box-number">{{$class}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$class}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($class / 100)*100}}% Increase in 30 Days
@@ -144,7 +144,7 @@
                                 <span class="info-box-number">{{$subject}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$subject}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   {{($subject / 100)*100}}% Increase in 30 Days
@@ -164,7 +164,7 @@
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$subject}}%"></div>
                                 </div>
                                 <span class="progress-description">
                   70% Increase in 30 Days
@@ -184,7 +184,7 @@
                                 <span class="info-box-number">{{$att}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <div class="progress-bar" style="width: {{$att}}%"></div>
                                 </div>
                                 <span class="progress-description">
                                     {{($att / 100)*100}} % Increase in 30 Days
