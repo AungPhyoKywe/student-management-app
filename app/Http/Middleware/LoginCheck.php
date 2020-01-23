@@ -16,7 +16,13 @@ class LoginCheck
      */
     public function handle($request, Closure $next)
     {
+        if(Auth::check())
+        {
+                return $next($request);
 
-        return $next($request);
+        }else{
+            //abort(403, 'Unauthorized action.');
+            return redirect('/login');
+        }
     }
 }

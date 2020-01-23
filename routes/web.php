@@ -10,16 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
 Route::get('/',function (){
     return redirect('/login');
 });
-//superadmin
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['login']], function() {
+    //backend
+
     Route::get('/backend', 'SuperAdminController@index');
 
-
 //student
-    Route::get('/student/getdata', 'StudentController@getData')->name('student.getData');
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');
     Route::resource('teacher', 'TeacherController');
@@ -35,8 +36,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/timetables/{id}', 'TimetableController@destroy');
     Route::get('/enrolls/{id}', 'EnrolmentController@destroy');
     Route::get('/classes/{id}', 'ClassController@destroy');
-
-    Auth::routes();
-
-    Route::get('/home', 'HomeController@index')->name('home');
 });
+
+
+
+
