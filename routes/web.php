@@ -42,9 +42,11 @@ Route::group(['middleware' => ['login']], function() {
     Route::resource('subject', 'SubjectController');
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
+    Route::get('/subjects/{id}','SubjectController@destroy');
     Route::get('/download/{file}', 'ExamController@download');
     Route::post('/search', 'AttController@search')->name('search');
     Route::get('/students/{id}', 'StudentController@destroy');
+    Route::get('/exams/{id}','ExamController@destroy');
     Route::get('/scores/{id}','ScoreController@destroy');
     Route::get('/timetables/{id}', 'TimetableController@destroy');
     Route::get('/enrolls/{id}', 'EnrolmentController@destroy');

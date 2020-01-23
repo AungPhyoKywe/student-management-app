@@ -51,15 +51,16 @@ class ScoreController extends Controller
         $score->student_id=$request->student;
         $score->exam_id=$request->exam;
         $score->Score=$request->score;
-        if ($request->score < 40)
+
+        if ($request->score < 90)
         {
             $score->Status='Fail';
         }
-        if ($request->score > 40)
+        if ($request->score >= 90)
         {
             $score->Status='Pass';
         }
-        if ($request->score > 80)
+        if ($request->score > 120)
         {
             $score->Status='Qualify';
         }
