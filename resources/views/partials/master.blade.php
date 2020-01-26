@@ -1,11 +1,11 @@
 @include('partials.loading')
-@include('partials.header');
+@include('partials.header')
 
-@include('partials.nav');
+@include('partials.nav')
 
-@include('partials.sidebar');
+@include('partials.sidebar')
 
-@yield('content');
+@yield('content')
 
 <div id="loading"></div>
 

@@ -16,7 +16,7 @@
             z-index: 100;
             width: 100%;
             height: 100%;
-            background-color: rgba(192, 192, 192, 0.5);
+            /*background-color: rgba(192, 192, 192, 0.5);*/
             background-image: url("https://media2.giphy.com/media/10kTz4r3ishQwU/giphy.gif?cid=790b7611b5a13ca0cc3871ac347a16f037693fd9d211af86&rid=giphy.gif");
             background-repeat: no-repeat;
             background-position: center;
@@ -30,7 +30,6 @@
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
 
-
 <script type="text/javascript">
 
     function onReady(callback) {
@@ -39,7 +38,7 @@
                 window.clearInterval(intervalId);
                 callback.call(this);
             }
-        }, 800);
+        }, 300);
     }
     function setVisible(selector, visible) {
         document.querySelector(selector).style.display = visible ? 'block' : 'none';

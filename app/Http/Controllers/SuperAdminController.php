@@ -6,6 +6,7 @@ use App\Attendance;
 use App\Classes;
 use App\Enroll;
 use App\Exam;
+use App\Payment;
 use App\Student;
 use App\Subject;
 use App\Timetable;
@@ -21,6 +22,7 @@ class SuperAdminController extends Controller
      */
     public function index()
     {
+        $payment=Payment::count();
         $student =Student::count();
         $exam=Exam::count();
         $att=Attendance::count();
@@ -33,8 +35,8 @@ class SuperAdminController extends Controller
             [   'student' =>$student,'teacher'=>$teacher,
                 'time'=>$time,'enrol'=>$enrol,
                 'exam'=>$exam,'class'=>$class,
-                'subject'=>$subject,'att'=>$att
-
+                'subject'=>$subject,'att'=>$att,
+                'payment'=>$payment
 
             ]);
     }

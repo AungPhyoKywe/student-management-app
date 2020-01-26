@@ -304,8 +304,4 @@
 
     <!-- /.sidebar -->
 </aside>
-
-
-
-
 @include('partials._js')

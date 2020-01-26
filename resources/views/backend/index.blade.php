@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="content-wrapper">
+        <br><br>
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -161,13 +162,13 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Payments</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{$payment}}</span>
 
                                 <div class="progress">
-                                    <div class="progress-bar" style="width: {{$subject}}%"></div>
+                                    <div class="progress-bar" style="width: {{$payment}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  70% Increase in 30 Days
+                  {{($payment / 100)*100}}% Increase in 30 Days
                 </span>
                             </div>
                             <!-- /.info-box-content -->
