@@ -28,4 +28,10 @@
         $(".alert").hide("20")
 
     }, 2000);
+
+    function myFunction() {
+        window.print();
+    }
+</script>
+
 </script>

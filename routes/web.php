@@ -36,12 +36,16 @@ Route::group(['middleware' => ['login']], function() {
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');
 
+    Route::resource('payment','PaymentController');
     Route::resource('score','ScoreController');
     Route::resource('timetable', 'TimetableController');
     Route::resource('enroll', 'EnrolmentController');
     Route::resource('subject', 'SubjectController');
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
+    Route::get('/pdf','PaymentController@print_pdf');
+    Route::get('/payments/{id}','PaymentController@destroy');
+    Route::get('/invoice/{id}','PaymentController@invoice');
     Route::get('/subjects/{id}','SubjectController@destroy');
     Route::get('/download/{file}', 'ExamController@download');
     Route::post('/search', 'AttController@search')->name('search');
