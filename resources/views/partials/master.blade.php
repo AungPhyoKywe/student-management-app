@@ -7,7 +7,7 @@
 
 @yield('content');
 
-{{--<div id="loading"></div>--}}
+<div id="loading"></div>
 
 
 

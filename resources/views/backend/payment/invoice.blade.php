@@ -16,7 +16,7 @@
                             <div class="col-12">
                                 <h4>
                                     <i class="fas fa-globe"></i> School Managements
-                                    <small class="float-right">Date: 2/10/2014</small>
+                                    <small class="float-right">Date: {{$payment[0]->payment_date}}</small>
                                 </h4>
                             </div>
                             <!-- /.col -->
@@ -27,9 +27,7 @@
                                 From
                                 <address>
                                     <strong>School Managements</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
                                     San Francisco, CA 94107<br>
-                                    Phone: (804) 123-5432<br>
                                     Email: info@almasaeedstudio.com
                                 </address>
                             </div>
@@ -37,18 +35,21 @@
                             <div class="col-sm-4 invoice-col">
                                 To
                                 <address>
-                                    <strong>John Doe</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
-                                    San Francisco, CA 94107<br>
-                                    Phone: (555) 539-1037<br>
-                                    Email: john.doe@example.com
+                                    <strong>{{$payment[0]->name}}</strong><br>
+                                    {{$payment[0]->address}}<br>
+                                    Phone: {{$payment[0]->ph_no}}<br>
                                 </address>
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-4 invoice-col">
-                                <b class="text-danger"><h3>UNPAID</h3></b><br>
+                                @if($payment[0]->status == 'unpaid')
+                                    <b class="text-danger"><h3>UNPAID</h3></b><br>
+                                @endif
+                                    @if($payment[0]->status == 'paid')
+                                        <b class="text-success"><h3>PAID</h3></b><br>
+                                    @endif
                                 <br>
-                                <b>Student ID:</b> 4F3S8J<br>
+                                <b>Student ID:</b> {{$payment[0]->id}}<br>
                                 <b>Payment Due:</b> 2/22/2023<br>
                             </div>
                             <!-- /.col -->
@@ -69,9 +70,9 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>Call of Duty</td>
-                                        <td>El snort testosterone trophy driving gloves handsome</td>
-                                        <td>$64.50</td>
+                                        <td>{{$payment[0]->payment_title}}</td>
+                                        <td>{{$payment[0]->payment_description}}</td>
+                                        <td>${{$payment[0]->amount}}</td>
                                     </tr>
 
                                     </tbody>
@@ -94,7 +95,7 @@
                                     <table class="table">
                                         <tr>
                                             <th style="width:50%">Subtotal:</th>
-                                            <td>$250.30</td>
+                                            <td>${{$payment[0]->amount}}</td>
                                         </tr>
                                         <tr>
                                             <th>Tax (9.3%)</th>
@@ -102,7 +103,7 @@
                                         </tr>
                                         <tr>
                                             <th>Total:</th>
-                                            <td>$265.24</td>
+                                            <td>${{$payment[0]->amount +10.34}}</td>
                                         </tr>
                                     </table>
                                 </div>

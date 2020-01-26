@@ -43,7 +43,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::resource('subject', 'SubjectController');
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
-    Route::get('/pdf','PaymentController@print_pdf');
+   // Route::get('/pdf','PaymentController@print_pdf');
     Route::get('/payments/{id}','PaymentController@destroy');
     Route::get('/invoice/{id}','PaymentController@invoice');
     Route::get('/subjects/{id}','SubjectController@destroy');

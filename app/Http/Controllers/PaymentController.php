@@ -113,13 +113,17 @@ class PaymentController extends Controller
 
     public function invoice($id)
     {
-        return view('backend.payment.invoice');
-    }
-    public function print_pdf()
-    {
-        //dd('h');
-        $pdf = PDF::loadView('invoice');
+        $payment= DB::table('payments')
+            ->select('table_students.id','table_students.name',
+                'table_students.ph_no','table_students.address',
+                'payments.payment_title','payments.payment_date',
+                'payments.payment_description','payments.amount',
+                'payments.status'
 
-        return $pdf->download('disney.pdf');
+            )
+            ->join('table_students','payments.student_id','=','table_students.id')
+            ->get();
+        return view('backend.payment.invoice',['payment'=>$payment]);
     }
+
 }
