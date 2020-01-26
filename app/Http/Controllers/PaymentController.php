@@ -122,6 +122,7 @@ class PaymentController extends Controller
 
             )
             ->join('table_students','payments.student_id','=','table_students.id')
+            ->where('payments.id',$id)
             ->get();
         return view('backend.payment.invoice',['payment'=>$payment]);
     }
