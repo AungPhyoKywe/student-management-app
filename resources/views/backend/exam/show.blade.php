@@ -17,7 +17,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table  table-responsive-sm nowrap"style="width: 100%;" >
+                            <table id="example2" class="table  table-responsive nowrap"style="width: 100%;" >
                                 <thead>
                                 <tr>
                                     <th>Exam Name</th>
