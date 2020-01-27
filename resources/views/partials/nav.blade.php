@@ -27,15 +27,7 @@
                     </div>
                 </div>
             </form>
-            <select class="selectpicker" data-width="fit">
-                <option data-content=' English'><img src="#">English</option>
-                <option  data-content='<span class="flag-icon flag-icon-mx"></span> Myanmar'>Myanmar</option>
-            </select>
-            <script>
-                $(function(){
-                    $('.selectpicker').selectpicker();
-                });
-            </script>
+
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->

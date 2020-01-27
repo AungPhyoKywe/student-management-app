@@ -3,8 +3,9 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <br><br>
+        <!-- Content Header (Page header) -->
+
         <!-- Main content -->
         <section class="content">
             <div class="row">
@@ -13,31 +14,43 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Students Enrolment List</h3>
+                            <h3 class="card-title">Payment List</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table  table-responsive-sm nowrap"style="width: 100%;" >
                                 <thead>
                                 <tr>
-                                    <th>Student Name</th>
-                                    <th>Class Name</th>
-                                    <th>Enrolment Date</th>
+                                    <th>Payment Title</th>
+                                    <th>Date</th>
+                                    <th>Payment Description</th>
+                                    <th>Student</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($enrol as $e)
-                                <tr>
-                                    <td>{{ $e->name }}</td>
-                                    <td>{{ $e->class_name }}</td>
-                                    <td>{{ $e->enrolment_date }}</td>
-                                    <td>
-                                        <a href="{{route('enroll.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                        <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
-                                    </td>
-                                </tr>
+                                @foreach($payment as $e)
+                                    <tr>
+                                        <td>{{ $e->payment_title }}</td>
+                                        <td>{{ $e->payment_date }}</td>
+                                        <td>{{ $e->payment_description }}</td>
+                                        <td>{{ $e->name }}</td>
+                                        <td>{{ $e->amount }}</td>
+                                       @if($e->status == 'unpaid')
+                                            <td class="text-danger">{{ $e->status }}</td>
+                                        @endif
+                                        @if($e->status == 'paid')
+                                            <td class="text-success">{{ $e->status }}</td>
+                                        @endif
+                                        <td>
+                                            <a href="/invoice/{{$e->id}}" class="btn-sm btn-primary"><i class="fas fa-dollar-sign"></i></a>
+                                            <a href="{{route('payment.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
                                 @endforeach
 
                                 </tbody>
@@ -125,7 +138,7 @@
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/enrolls/'+$id;
+                        window.location.href='/payments/'+$id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");
