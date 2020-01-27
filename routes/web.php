@@ -35,7 +35,7 @@ Route::group(['middleware' => ['login']], function() {
     //student
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');
-
+    Route::resource('st_report','StudentReportController');
     Route::resource('payment','PaymentController');
     Route::resource('score','ScoreController');
     Route::resource('timetable', 'TimetableController');
