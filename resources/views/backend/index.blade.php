@@ -94,7 +94,7 @@
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fas fa-users"></i></span>
+                            <span class="info-box-icon"><i class="fas fa-book-open"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Exam</span>
@@ -114,7 +114,7 @@
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+                            <span class="info-box-icon"><i class="fas fa-graduation-cap"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Class</span>
@@ -158,7 +158,7 @@
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+                            <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Payments</span>
