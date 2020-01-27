@@ -17,13 +17,14 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Students Report</h3>
+                            <h3 class="card-title">Student Report</h3>
                             <div class="row">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-4"></div>
-                                <div class="col-lg-2-4">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3 mb-2">
                                     <p>
-                                        <button class="btn-sm btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        <button class="btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                             show/hide
                                         </button>
                                     </p>
@@ -37,16 +38,25 @@
 
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body">
-                                    <form class="form-inline">
-                                        <div class="form-group mb-2">
+                                    <form>
+                                        <div class="form-row">
+                                        <div class="col">
                                             <strong>From Date :</strong>
                                             <input type="date"  class="form-control" id="staticEmail2">
                                         </div>
-                                        <div class="form-group mx-sm-3 mb-2">
+                                        <div class="col">
                                             <strong>To Date :</strong>
                                             <input type="date"  class="form-control" id="staticEmail2">
                                         </div>
-                                        <button type="submit" class="btn btn-outline-success mb-2"><i class="fas fa-search"></i></button>
+                                        <div class="col">
+                                            <strong>Name :</strong>
+                                            <input type="text"  class="form-control" id="staticEmail2">
+                                        </div>
+                                            <div class="col"><br>
+                                                <button type="submit" id="staticEmail2" class="btn btn-outline-success"><i class="fas fa-search">search</i></button>
+                                            </div>
+                                        </div>
+
                                     </form>
                                 </div>
                             </div>

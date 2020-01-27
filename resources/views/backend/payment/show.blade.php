@@ -40,10 +40,10 @@
                                         <td>{{ $e->name }}</td>
                                         <td>${{ $e->amount }}</td>
                                        @if($e->status == 'unpaid')
-                                            <td class="text-danger">{{ $e->status }}</td>
+                                            <td><span class="badge badge-danger">{{ $e->status }}</span></td>
                                         @endif
                                         @if($e->status == 'paid')
-                                            <td class="text-success">{{ $e->status }}</td>
+                                            <td><span class="badge badge-success">{{ $e->status }}</span></td>
                                         @endif
                                         <td>
                                             <a href="/invoice/{{$e->id}}" class="btn-sm btn-primary"><i class="fas fa-dollar-sign"></i></a>
