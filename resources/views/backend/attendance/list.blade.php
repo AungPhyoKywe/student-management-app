@@ -3,6 +3,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <br><br>
         <!-- Content Header (Page header) -->
 
         <!-- Main content -->
@@ -19,12 +20,18 @@
                         <form name="studentForm" id="studentForm" method="POST" action="{{ route('att.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
-                            <label>Class ID:</label>
-                            <input type="text"value="{{$class_id}}" name="class">
-                            <label>Date:</label>
-                            <input type="date"value="{{$date}}"name="date">
-
                         <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Class ID:</label>
+                                    <input class="form-control" type="text"value="{{$class_id}}" name="class">
+                                </div>
+                                <div class="col-6">
+                                    <label>Date:</label>
+                                    <input class="form-control" type="date"value="{{$date}}"name="date">
+                                </div>
+                            </div>
+                            <br><br>
                             <table id="example2" class="table table-responsive-sm nowrap">
                                 <thead>
                                 <tr>

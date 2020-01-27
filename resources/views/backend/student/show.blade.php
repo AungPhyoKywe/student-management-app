@@ -4,6 +4,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <br><br>
         <!-- Content Header (Page header) -->
 
         <!-- Main content -->
