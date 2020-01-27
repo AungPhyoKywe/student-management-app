@@ -28,8 +28,8 @@
                 </div>
             </form>
             <select class="selectpicker" data-width="fit">
-                <option data-content='<img src="#"> English'>English</option>
-                <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
+                <option data-content=' English'><img src="#">English</option>
+                <option  data-content='<span class="flag-icon flag-icon-mx"></span> Myanmar'>Myanmar</option>
             </select>
             <script>
                 $(function(){
