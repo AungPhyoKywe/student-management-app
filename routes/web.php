@@ -25,6 +25,7 @@ Route::group(['middleware' => ['login']], function() {
 
     Route::resource('teacher', 'TeacherController');
     Route::get('/teachers/{id}', 'TeacherController@destroy');
+    Route::resource('tr_report','TeacherReportController');
 
     });
 

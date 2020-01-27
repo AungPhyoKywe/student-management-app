@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-4"></div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-2-4">
                                     <p>
                                         <button class="btn-sm btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                             show/hide
@@ -39,14 +39,14 @@
                                 <div class="card card-body">
                                     <form class="form-inline">
                                         <div class="form-group mb-2">
-                                            <label>From Date :</label>
+                                            <strong>From Date :</strong>
                                             <input type="date"  class="form-control" id="staticEmail2">
                                         </div>
                                         <div class="form-group mx-sm-3 mb-2">
-                                            <label>To Date :</label>
+                                            <strong>To Date :</strong>
                                             <input type="date"  class="form-control" id="staticEmail2">
                                         </div>
-                                        <button type="submit" class="btn btn-default mb-2">search</button>
+                                        <button type="submit" class="btn btn-outline-success mb-2"><i class="fas fa-search"></i></button>
                                     </form>
                                 </div>
                             </div>
@@ -62,7 +62,6 @@
                                     <th>Dath of Birth</th>
                                     <th>Phone</th>
                                     <th>Address</th>
-                                    <th>Action</th>
 
                                 </tr>
                                 </thead>
