@@ -38,24 +38,18 @@
 
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body">
-                                    <form>
-                                        <div class="form-row">
-                                        <div class="col">
-                                            <strong>From Date :</strong>
+                                    <form class="form-inline">
+                                            &nbsp;
+                                            <label>From Date :</label>
                                             <input type="date"  class="form-control" id="staticEmail2">
-                                        </div>
-                                        <div class="col">
-                                            <strong>To Date :</strong>
+                                            &nbsp;
+                                            <label>To Date :</label>
                                             <input type="date"  class="form-control" id="staticEmail2">
-                                        </div>
-                                        <div class="col">
-                                            <strong>Name :</strong>
+                                            &nbsp;
+                                            <label>Name :</label>
                                             <input type="text"  class="form-control" id="staticEmail2">
-                                        </div>
-                                            <div class="col"><br>
-                                                <button type="submit" id="staticEmail2" class="btn btn-outline-success"><i class="fas fa-search">search</i></button>
-                                            </div>
-                                        </div>
+                                            &nbsp;
+                                            <button type="submit" id="staticEmail2" class="btn btn-outline-success"><i class="fas fa-search">search</i></button>
 
                                     </form>
                                 </div>
