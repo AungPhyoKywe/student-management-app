@@ -51,7 +51,6 @@
                                         &nbsp;
                                         <button type="submit" id="staticEmail2" class="btn btn-outline-success"><i class="fas fa-search">search</i></button>
 
-
                                     </form>
                                 </div>
                             </div>
