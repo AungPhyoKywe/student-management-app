@@ -38,7 +38,7 @@
                                         <td>{{ $e->payment_date }}</td>
                                         <td>{{ $e->payment_description }}</td>
                                         <td>{{ $e->name }}</td>
-                                        <td>{{ $e->amount }}</td>
+                                        <td>${{ $e->amount }}</td>
                                        @if($e->status == 'unpaid')
                                             <td class="text-danger">{{ $e->status }}</td>
                                         @endif
