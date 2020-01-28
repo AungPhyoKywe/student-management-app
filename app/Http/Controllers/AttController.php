@@ -49,6 +49,12 @@ class AttController extends Controller
         $class=$request->class;
         $date=$request->date;
         $result=$request->qty;
+        if (!is_array($result)){
+
+            toastr()->error('An error has occurred please try again later.');
+
+            return redirect('/att');
+        }
         //dd($request->input('qty'));
        foreach ($result as $key => $value)
        {

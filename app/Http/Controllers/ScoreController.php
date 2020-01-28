@@ -66,13 +66,11 @@ class ScoreController extends Controller
         }
 
         $score->save();
-        $notification = array(
-            'message' => 'I am a successful message!',
-            'alert-type' => 'success'
-        );
+
+        toastr()->success('Data has been saved successfully!');
 
 
-        return redirect('/score')->with($notification);
+        return redirect('/score');
 
     }
 

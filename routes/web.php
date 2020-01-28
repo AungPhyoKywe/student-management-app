@@ -49,7 +49,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::get('/invoice/{id}','PaymentController@invoice');
     Route::get('/subjects/{id}','SubjectController@destroy');
     Route::get('/download/{file}', 'ExamController@download');
-    Route::post('/search', 'AttController@search')->name('search');
+    Route::any('/search', 'AttController@search')->name('search');
     Route::get('/students/{id}', 'StudentController@destroy');
     Route::get('/exams/{id}','ExamController@destroy');
     Route::get('/scores/{id}','ScoreController@destroy');
