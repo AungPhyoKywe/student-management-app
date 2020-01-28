@@ -13,7 +13,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 @if(Auth()->user()->role =='superadmin')
-                <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="/dist/img/user4-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                 @endif
                 @if(Auth()->user()->role =='teacher')
                     <img src="/uploads/teacher/{{Auth()->user()->profile_image}}" class="rounded-circle" style="width: 40px;height: 40px;">
