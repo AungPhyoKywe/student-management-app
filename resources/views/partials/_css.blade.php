@@ -21,3 +21,4 @@
 <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
