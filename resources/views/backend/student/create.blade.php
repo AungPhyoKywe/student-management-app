@@ -150,7 +150,6 @@
                                                                             <strong>Address:</strong>
                                                                             <input type="text"
                                                                                    name="address"
-                                                                                   value="address"
                                                                                    placeholder="address"
                                                                                    class="form-control"
                                                                                    data-parsley-required="true"

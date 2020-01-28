@@ -83,7 +83,11 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <strong>Date Of Birth:</strong>
-                                                                    <input class="form-control"name="dob"type="date">
+                                                                    <input
+                                                                        class="form-control"
+                                                                        name="dob"type="date"
+                                                                        data-parsley-required="true"
+                                                                        data-parsley-maxlength="255">
                                                                 </div>
                                                             </div>
                                                         </div>

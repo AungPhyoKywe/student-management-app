@@ -28,7 +28,7 @@
                                                 <div class="container">
 
                                                     <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" class="was-validated" method="POST" action="{{ route('exam.store') }}" data-parsley-validate="true" enctype="multipart/form-data" >
+                                                    <form name="studentForm" id="studentForm"  method="POST" action="{{ route('exam.store') }}" data-parsley-validate="true" enctype="multipart/form-data" >
                                                         {!! csrf_field() !!}
 
                                                         <div class="row">
@@ -36,34 +36,29 @@
                                                                 <div class="form-group">
                                                                     <strong>Exam Name:</strong>
                                                                     <input class="form-control"
-                                                                            id="validationTooltip01"
                                                                             name="exam_name"
-                                                                           required
-                                                                            >
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
-
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255">
                                                                 </div>
                                                                     <div class="form-group">
                                                                         <strong>Class:</strong>
                                                                         <select class="form-control"
-                                                                               name="class_name"
-                                                                               id="customControlValidation2"
-                                                                               required
+                                                                                name="class_name"
+                                                                                data-parsley-required="true"
+                                                                                data-parsley-maxlength="255"
                                                                                >
                                                                             <option value="">Open this select menu</option>
                                                                             @foreach($class as $key =>$value)
                                                                                 <option value="{{$value}}">{{$key}}</option>
                                                                             @endforeach
                                                                         </select>
-                                                                        <div class="invalid-feedback">Example invalid feedback text</div>
+
                                                                     </div>
 
                                                                 <div class="form-group">
                                                                     <strong>Subject:</strong>
                                                                     <select class="form-control"
                                                                             name="subject_name"
-                                                                            id="customControlValidation2"
-                                                                            required
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
                                                                         <option value="">Open this select menu</option>
@@ -71,15 +66,16 @@
                                                                         <option value="{{$value}}">{{$key}}</option>
                                                                         @endforeach
                                                                     </select>
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
                                                                 </div>
 
                                                                 <strong>Upload Question:</strong>
                                                                 <div class="custom-file">
 
-                                                                    <input type="file" name="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                                    <input type="file" name="file"
+                                                                           class="custom-file-input"
+                                                                           data-parsley-required="true"
+                                                                           data-parsley-maxlength="255">
+                                                                    <label class="custom-file-label">Choose file...</label>
                                                                 </div>
                                                                 </div>
 
@@ -89,11 +85,8 @@
                                                                     <input class="form-control"
                                                                            type="date"
                                                                             name="exam_date"
-                                                                            id="customControlValidation2"
-                                                                            required
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
                                                                 </div>
 
 
@@ -101,12 +94,9 @@
                                                                     <strong>Start Time:</strong>
                                                                     <input class="form-control"
                                                                            type="time"
-                                                                           id="customControlValidation2"
-                                                                           required
                                                                            name="start_time"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255">
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
 
                                                                 </div>
                                                                 <div class="form-group">
@@ -114,23 +104,17 @@
                                                                     <input class="form-control"
                                                                             type="time"
                                                                             name="end_time"
-                                                                           id="customControlValidation2"
-                                                                           required
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
                                                                 </div>
 
 
                                                                 <div class="form-group">
                                                                     <strong>Description:</strong>
                                                                     <textarea class="form-control"
-                                                                              id="customControlValidation2"
-                                                                              required
                                                                               name="description"
                                                                               data-parsley-required="true"
                                                                               data-parsley-maxlength="255"></textarea>
-                                                                    <div class="invalid-feedback">Example invalid feedback text</div>
                                                                 </div>
                                                             </div>
                                                         </div>

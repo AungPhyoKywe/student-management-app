@@ -24,11 +24,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label>Class ID:</label>
-                                    <input class="form-control" type="text"value="{{$class_id}}" name="class">
+                                    <input class="form-control" type="text"value="{{$class_id}}" name="class"readonly>
                                 </div>
                                 <div class="col-6">
                                     <label>Date:</label>
-                                    <input class="form-control" type="date"value="{{$date}}"name="date">
+                                    <input class="form-control" type="date"value="{{$date}}"name="date"readonly>
                                 </div>
                             </div>
                             <br><br>
@@ -47,19 +47,22 @@
                                         <td>
                                             <!-- Material inline 1 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input"  value="present" name="qty[{{ $e->id }}]">
+                                                <input type="radio" class="form-check-input"  data-parsley-required="true"
+                                                       data-parsley-maxlength="255"value="present" name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline1">present</label>
                                             </div>
 
                                             <!-- Material inline 2 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline2" value="absent"name="qty[{{ $e->id }}]">
+                                                <input type="radio" class="form-check-input" data-parsley-required="true"
+                                                       data-parsley-maxlength="255"id="materialInline2" value="absent"name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline2">absent</label>
                                             </div>
 
                                             <!-- Material inline 3 -->
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" id="materialInline3" value="late" name="qty[{{ $e->id }}]">
+                                                <input type="radio" class="form-check-input" id="materialInline3"data-parsley-required="true"
+                                                       data-parsley-maxlength="255" value="late" name="qty[{{ $e->id }}]">
                                                 <label class="form-check-label" for="materialInline3">late</label>
                                             </div>
 
@@ -72,7 +75,7 @@
                             </table>
                             <div>
                                 <a href="{{route('att.create')}}"class="btn btn-warning">Back</a>
-                                <button type="submit" class="btn btn-success">Save Attendance</button>
+                                <button type="submit" class="btn btn-success ">Save Attendance</button>
                             </div>
                         </div>
                         <!-- /.card-body -->

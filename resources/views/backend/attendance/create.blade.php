@@ -44,7 +44,8 @@
                                                                 <option value="{{$value}}">{{$key}}</option>
                                                                 @endforeach
                                                             </select><br>
-                                                            <input type="date"class="form-control" name="date">
+                                                            <input type="date"class="form-control" name="date"data-parsley-required="true"
+                                                                   data-parsley-maxlength="255">
                                                             <br>
                                                             <button type="submit" class=" btn-sm btn-success form-control">Create New Attendance</button>
                                                         </div>

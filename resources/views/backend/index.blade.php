@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
@@ -49,7 +49,7 @@
                     @endif
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-warning">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
                             <div class="info-box-content">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
@@ -113,7 +113,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-warning">
                             <span class="info-box-icon"><i class="fas fa-graduation-cap"></i></span>
 
                             <div class="info-box-content">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
 
                             <div class="info-box-content">
@@ -177,7 +177,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-warning">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
                             <div class="info-box-content">
