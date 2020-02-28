@@ -164,7 +164,7 @@
                                                                             <div style="height:0px;overflow:hidden;">
                                                                                 <input class="btn-primary" type="file" name="file" id="profile-img"><i class="fas fa-cloud"></i></input>
                                                                             </div>
-                                                                            <button type="button" class="btn btn-primary" style="opacity: 0.7; position: absolute;" onclick="chooseFile('#profile-img');" data-placement="left" data-toggle="tooltip" title="Upload new image"><i class="fas fa-cloud"></i></button>
+                                                                            <button type="button" class="btn btn-primary" style="opacity: 0.7; position: absolute;" onclick="chooseFile('#profile-img');" data-placement="left" data-toggle="tooltip" title="Upload new image"><i class="fas fa-upload"></i></button>
                                                                             <img src="" id="profile-img-tag" style="border:1px solid lightgray; width: 200px; height: 200px;" />
 
                                                                         </div>
