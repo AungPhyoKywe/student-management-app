@@ -189,7 +189,8 @@
                                 </div>
                                 <span class="progress-description">
                                     {{($att / 100)*100}} % Increase in 30 Days
-                </span>
+                                 </span>
+                                <example-component></example-component>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -202,4 +203,5 @@
             </div>
         </section>
         </div>
+
 @stop
