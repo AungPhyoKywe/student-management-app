@@ -4,7 +4,7 @@
     <a href="/" class="brand-link">
         <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light"> School Managements</span>
+        <span class="brand-text font-weight-light"> {{ __('msg.School Managements') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -20,7 +20,7 @@
                 @endif
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{Auth()->user()->name}}</a>
+                <a href="#" class="d-block">{{ __('msg.'.Auth()->user()->name) }}</a>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-graduation-cap"></i>
                         <p>
-                            Students
+                            {{__('msg.Students')}}
                             <i class="fas fa-angle-left right"></i>
 
                         </p>
@@ -61,7 +61,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-chalkboard-teacher"></i>
                         <p>
-                            Teacher
+                            {{__('msg.Teachers')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -85,7 +85,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{route('enroll.index')}}" class="nav-link">
                         <i class="fas fa-book-open"></i>
-                        <p>Student Enroll
+                        <p>{{ __('msg.Student Enroll') }}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -108,7 +108,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{ route('timetable.index') }}" class="nav-link">
                         <i class="fas fa-table"></i>
-                        <p>Time Tables
+                        <p>{{__('msg.Time Tables')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -131,7 +131,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="far fa-sticky-note"></i>
-                        <p>Exam
+                        <p>{{__('msg.Exam')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -154,7 +154,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-graduation-cap"></i>
-                        <p>Class
+                        <p>{{__('msg.Class')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -177,7 +177,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-bookmark"></i>
-                        <p>Subjects
+                        <p>{{__('msg.Subjects')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -200,7 +200,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-book-open"></i>
-                        <p>Score
+                        <p>{{__('msg.Score')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -224,7 +224,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-money-check-alt"></i>
-                        <p>Payments
+                        <p>{{__('msg.Payments')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -249,7 +249,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-users"></i>
-                        <p>Attendence
+                        <p>{{__('msg.Attendence')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -273,7 +273,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-book"></i>
                         <p>
-                            Report
+                            {{__('msg.Report')}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

@@ -15,6 +15,7 @@ Auth::routes();
 Route::get('/',function (){
     return redirect('/login');
 });
+
 //page not found
 Route::get('/404','PageNotFountController@index');
 
@@ -30,9 +31,10 @@ Route::group(['middleware' => ['login']], function() {
     });
 
     //backend
+Route::group(['prefix'=>'{local}'],function (){
 
-    Route::get('/backend', 'SuperAdminController@index');
-
+    Route::get('/backend/', 'SuperAdminController@index');
+});
     //student
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');

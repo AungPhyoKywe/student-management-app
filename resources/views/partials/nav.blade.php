@@ -9,17 +9,17 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="../../index3.html" class="nav-link">{{__('msg.Home')}}</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">{{__('msg.Contact')}}</a>
                 </li>
             </ul>
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control form-control-navbar" type="search" placeholder="{{__('msg.search')}}" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
@@ -32,12 +32,12 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Language <span class="caret"></span>
+                        {{__('msg.Language')}} <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="lang/en"><img src="{{asset('img/en.png')}}" width="30px" height="20x"> English</a>
-                        <a class="dropdown-item" href="lang/jp"><img src="{{asset('img/jp.png')}}" width="30px" height="20x"> Japanese</a>
-                        <a class="dropdown-item" href="lang/jp"><img src="{{asset('img/mm.png')}}" width="30px" height="20x"> Myanmar</a>
+                        <a class="dropdown-item" href="/en/backend"><img src="{{asset('img/en.png')}}" width="30px" height="20x"> English</a>
+                        <a class="dropdown-item" href="/jp/backend/"><img src="{{asset('img/jp.png')}}" width="30px" height="20x"> Japanese</a>
+                        <a class="dropdown-item" href="/mm/backend/"><img src="{{asset('img/mm.png')}}" width="30px" height="20x"> Myanmar</a>
                     </div>
                 </li>
                 <!-- Messages Dropdown Menu -->

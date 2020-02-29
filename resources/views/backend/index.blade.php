@@ -11,14 +11,14 @@
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Student</span>
+                                <span class="info-box-text">{{__('msg.Students')}}</span>
                                 <span class="info-box-number">{{$student}}</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: {{$student}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($student / 100)*100}}% Increase in 30 Days
+                  {{($student / 100)*100}}%{{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -32,14 +32,14 @@
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Teacher</span>
+                                <span class="info-box-text">{{__('msg.Teachers')}}</span>
                                 <span class="info-box-number">{{$teacher}}</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: {{$teacher}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($teacher / 100)*100}}% Increase in 30 Days
+                  {{($teacher / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -53,14 +53,14 @@
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Time Table</span>
+                                <span class="info-box-text">{{__('msg.Time Tables')}}</span>
                                 <span class="info-box-number">{{$time}}</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: {{$time}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($time / 100)*100}}% Increase in 30 Days
+                  {{($time / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -77,14 +77,14 @@
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Student Enrolment</span>
+                                <span class="info-box-text">{{__('msg.Student Enroll')}}</span>
                                 <span class="info-box-number">{{$enrol}}</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: {{$enrol}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($enrol / 100)*100}}% Increase in 30 Days
+                  {{($enrol / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -97,14 +97,14 @@
                             <span class="info-box-icon"><i class="fas fa-book-open"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Exam</span>
+                                <span class="info-box-text">{{__('msg.Exam')}}</span>
                                 <span class="info-box-number">{{$exam}}</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: {{$exam}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($exam / 100)*100}}% Increase in 30 Days
+                  {{($exam / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -124,7 +124,7 @@
                                     <div class="progress-bar" style="width: {{$class}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($class / 100)*100}}% Increase in 30 Days
+                  {{($class / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -148,7 +148,7 @@
                                     <div class="progress-bar" style="width: {{$subject}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($subject / 100)*100}}% Increase in 30 Days
+                  {{($subject / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -168,7 +168,7 @@
                                     <div class="progress-bar" style="width: {{$payment}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                  {{($payment / 100)*100}}% Increase in 30 Days
+                  {{($payment / 100)*100}}% {{__('msg.Increase in 30 Days')}}
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -188,7 +188,7 @@
                                     <div class="progress-bar" style="width: {{$att}}%"></div>
                                 </div>
                                 <span class="progress-description">
-                                    {{($att / 100)*100}} % Increase in 30 Days
+                                    {{($att / 100)*100}} % {{__('msg.Increase in 30 Days')}}
                                  </span>
                                 <example-component></example-component>
                             </div>
