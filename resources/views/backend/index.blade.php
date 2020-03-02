@@ -117,7 +117,7 @@
                             <span class="info-box-icon"><i class="fas fa-graduation-cap"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Class</span>
+                                <span class="info-box-text">{{ __('msg.Class') }}</span>
                                 <span class="info-box-number">{{$class}}</span>
 
                                 <div class="progress">
@@ -141,7 +141,7 @@
                             <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Subject</span>
+                                <span class="info-box-text">{{__('msg.Subjects')}}</span>
                                 <span class="info-box-number">{{$subject}}</span>
 
                                 <div class="progress">
@@ -161,7 +161,7 @@
                             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Payments</span>
+                                <span class="info-box-text">{{__('msg.Payments')}}</span>
                                 <span class="info-box-number">{{$payment}}</span>
 
                                 <div class="progress">
@@ -181,7 +181,7 @@
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Attendance</span>
+                                <span class="info-box-text">{{ __('msg.Attendence')}}</span>
                                 <span class="info-box-number">{{$att}}</span>
 
                                 <div class="progress">
