@@ -6,7 +6,7 @@ return [
     'School Managements' => 'ကျောင်းစီမံခန့်ခွဲမှု',
     'Superadmin'         => 'အက်မင်',
     'Students'           => 'ကျောင်းသားများ',
-    'Teachers'           => 'ဆရာမျာ:',
+    'Teachers'           => 'ဆရာများ',
     'Student Enroll'     => 'ကျောင်းသားစာရင်းသွင်းရန်',
     'Time Tables'        => 'အချိန်ဇယား',
     'Language'           => 'ဘာသာစကား',
