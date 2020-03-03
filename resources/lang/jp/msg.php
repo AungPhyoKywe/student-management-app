@@ -21,6 +21,7 @@ return [
     'Home'              => 'ホーム',
     'Contact'           =>'連絡先',
     'search'            =>'検索',
+    'Logout'            =>'ログアウト',
 
 ]
 ?>

@@ -20,6 +20,7 @@
         'Report'            => 'Report',
         'Home'              => 'Home',
         'Contact'           =>'Contact',
-        'search'            =>'search'
+        'search'            =>'search',
+        'Logout'            =>'Logout',
         ]
 ?>
