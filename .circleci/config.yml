@@ -12,8 +12,8 @@ workflows:
     jobs:
       - welcome/run
 
-test:
+ test:
   override:
-    - phpunit ./StudentTest.php
+    - vendor/bin/phpunit
 
 
