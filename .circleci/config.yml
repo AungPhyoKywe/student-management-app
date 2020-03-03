@@ -12,6 +12,7 @@ workflows:
     jobs:
       - welcome/run
 
+
  test:
   override:
     - vendor/bin/phpunit
