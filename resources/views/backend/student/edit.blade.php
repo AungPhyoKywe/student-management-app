@@ -175,8 +175,11 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                                 <div class="form-group">
                                                                     <strong>Image:</strong><br>
-                                                                    <img src="/uploads/logos/{{ $student[0]->profile_image }}" id="profile-img-tag" style="width: 150px;height: 150px;border-bottom-color: #0c525d" /><br><br>
-                                                                    <input class="form-group  btn-primary" type="file" name="file" id="profile-img">
+                                                                    <div style="height:0px;overflow:hidden;">
+                                                                        <input class="btn-primary" type="file" name="file" id="profile-img"><i class="fas fa-cloud"></i></input>
+                                                                    </div>
+                                                                    <button type="button" class="btn btn-primary" style="opacity: 0.7; position: absolute;" onclick="chooseFile('#profile-img');" data-placement="left" data-toggle="tooltip" title="Upload new image"><i class="fas fa-upload"></i></button>
+                                                                    <img src="/uploads/logos/{{ $student[0]->profile_image }}" id="profile-img-tag" style="border:1px solid lightgray; width: 200px; height: 200px;" />
 
                                                                 </div>
                                                             </div>
@@ -211,6 +214,9 @@
         </section>
     </div>
     <script type="text/javascript">
+        function chooseFile(input_div) {
+            $(input_div).click();
+        }
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
