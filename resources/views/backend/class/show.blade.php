@@ -17,7 +17,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table  table-responsive-sm  nowrap"style="width: 100%;" >
+                            <table id="example2" class="table  table-responsive-sm  nowrap" style="width: 100%;">
                                 <thead>
                                 <tr>
                                     <th>Class Name</th>
@@ -32,8 +32,10 @@
                                         <td>{{ $e->class_name }}</td>
                                         <td>{{ $e->name }}</td>
                                         <td>
-                                            <a href="{{route('class.edit',$e->class_id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                            <a href="#" onclick="confirmation({{ $e->class_id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                            <a href="{{route('class.edit',$e->class_id) }}"
+                                               class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            <a href="#" onclick="confirmation({{ $e->class_id }})"
+                                               class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -53,7 +55,7 @@
     </div>
 
     <script>
-        $(document).ready( function () {
+        $(document).ready(function () {
 
             $('#example2').DataTable({
 
@@ -64,27 +66,27 @@
                     {
                         extend: 'csv',
                         exportOptions: {
-                            columns: [  1, 2,3,4,5,6,7,8 ]
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8]
                         }
                     },
                     {
                         extend: 'excel',
                         exportOptions: {
-                            columns: [  1, 2,3,4,5,6,7,8 ]
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8]
                         }
                     }
                     ,
                     {
                         extend: 'pdf',
                         exportOptions: {
-                            columns: [  1, 2,3,4,5,6,7,8 ]
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8]
                         }
                     }
                     ,
                     {
                         extend: 'print',
                         exportOptions: {
-                            columns: [  1, 2,3,4,5,6,7,8 ]
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8]
                         }
                     },
                     {
@@ -103,7 +105,7 @@
 
             });
             table.buttons().container()
-                .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+                .appendTo('#example_wrapper .col-md-6:eq(0)');
         });
 
         function confirmation($id) {
@@ -116,14 +118,14 @@
                     'Yes, I am sure!'
                 ],
                 dangerMode: true,
-            }).then(function(isConfirm) {
+            }).then(function (isConfirm) {
                 if (isConfirm) {
                     swal({
                         title: 'Shortlisted!',
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/classes/'+$id;
+                        window.location.href = '/classes/' + $id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

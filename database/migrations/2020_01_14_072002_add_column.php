@@ -14,7 +14,7 @@ class AddColumn extends Migration
     public function up()
     {
         Schema::table('table_students', function (Blueprint $table){
-            $table->string('age')->after('name');
+            $table->string('age')->after('name')->default('0');
             $table->string('gender')->after('age');
             $table->string('father_name')->after('gender');
             $table->string('reglious')->after('father_name');

@@ -37,7 +37,9 @@
                                                 <div class="container">
 
                                                     <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" method="POST" action="{{ route('enroll.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                    <form name="studentForm" id="studentForm" method="POST"
+                                                          action="{{ route('enroll.store') }}"
+                                                          data-parsley-validate="true" enctype="multipart/form-data">
                                                         {!! csrf_field() !!}
 
                                                         <div class="row">
@@ -50,7 +52,8 @@
                                                                             data-parsley-maxlength="255">
 
                                                                         @foreach($student as $key => $stu)
-                                                                            <option value="{{ $stu }}">{{ $key}}</option>
+                                                                            <option
+                                                                                value="{{ $stu }}">{{ $key}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
@@ -68,7 +71,8 @@
                                                                             data-parsley-maxlength="255">
 
                                                                         @foreach($class as $key => $classes)
-                                                                            <option value="{{ $classes }}">{{ $key}}</option>
+                                                                            <option
+                                                                                value="{{ $classes }}">{{ $key}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
@@ -93,8 +97,11 @@
                                                                 <div class="pull-left">
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a class="btn btn-warning" href="{{route('enroll.index')}}"> Back to Listing</a>
-                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                    <a class="btn btn-warning"
+                                                                       href="{{route('enroll.index')}}"> Back to
+                                                                        Listing</a>
+                                                                    <button type="submit" class="btn btn-success">Save
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>

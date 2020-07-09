@@ -35,21 +35,27 @@
 
                                             <div class="shadow-sm">
                                                 <div class="container">
-                                                    <form name="studentForm" id="studentForm" method="POST" action="{{ route('search') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                    <form name="studentForm" id="studentForm" method="POST"
+                                                          action="{{ route('search') }}" data-parsley-validate="true"
+                                                          enctype="multipart/form-data">
                                                         {!! csrf_field() !!}
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-12 col-md-6">
-                                                            <select class="form-control" name="class">
-                                                                @foreach($class as $key =>$value)
-                                                                <option value="{{$value}}">{{$key}}</option>
-                                                                @endforeach
-                                                            </select><br>
-                                                            <input type="date"class="form-control" name="date"data-parsley-required="true"
-                                                                   data-parsley-maxlength="255">
-                                                            <br>
-                                                            <button type="submit" class=" btn-sm btn-success form-control">Create New Attendance</button>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <select class="form-control" name="class">
+                                                                    @foreach($class as $key =>$value)
+                                                                        <option value="{{$value}}">{{$key}}</option>
+                                                                    @endforeach
+                                                                </select><br>
+                                                                <input type="date" class="form-control" name="date"
+                                                                       data-parsley-required="true"
+                                                                       data-parsley-maxlength="255">
+                                                                <br>
+                                                                <button type="submit"
+                                                                        class=" btn-sm btn-success form-control">Create
+                                                                    New Attendance
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                     </form>
                                                     <!-- start form -->
 
@@ -70,7 +76,7 @@
         </section>
     </div>
     <script>
-        $(document).ready( function () {
+        $(document).ready(function () {
 
             $('#example2').DataTable();
         });
@@ -85,14 +91,14 @@
                     'Yes, I am sure!'
                 ],
                 dangerMode: true,
-            }).then(function(isConfirm) {
+            }).then(function (isConfirm) {
                 if (isConfirm) {
                     swal({
                         title: 'Shortlisted!',
                         text: 'Candidates are successfully shortlisted!',
                         icon: 'success'
                     }).then(function () {
-                        window.location.href='/classes/'+$id;
+                        window.location.href = '/classes/' + $id;
                     })
                 } else {
                     swal("Cancelled", "Your imaginary file is safe :)", "error");

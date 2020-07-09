@@ -15,7 +15,9 @@ class AdminsTableSeeder extends Seeder
             'name' => 'Superadmin',
             'email' => 'hinata0777@gmail.com',
             'profile_image'=>'admin.jpg',
+            'age'=>'19',
             'ph_no'=>'0988-9887-99',
+            'gender'=>'male',
             'address'=>'America',
             'password' => bcrypt('111111'),
             'role'=>'superadmin'

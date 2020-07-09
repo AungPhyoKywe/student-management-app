@@ -18,14 +18,14 @@ class ExamController extends Controller
      */
     public function index()
     {
-        $exam =DB::table('exam')
-            ->select('exam.id','exam.exam_name','exam.description','exam.question_file','table_classes.class_name'
-                ,'subject.subject_name','exam.exam_date',
-                'exam.start_time','exam.end_time')
-            ->join('table_classes','table_classes.class_id','=','exam.class_id')
-            ->join('subject','subject.id','=','exam.subject_id')
+        $exam = DB::table('exam')
+            ->select('exam.id', 'exam.exam_name', 'exam.description', 'exam.question_file', 'table_classes.class_name'
+                , 'subject.subject_name', 'exam.exam_date',
+                'exam.start_time', 'exam.end_time')
+            ->join('table_classes', 'table_classes.class_id', '=', 'exam.class_id')
+            ->join('subject', 'subject.id', '=', 'exam.subject_id')
             ->get();
-        return view('backend.exam.show',['exam'=>$exam]);
+        return view('backend.exam.show', ['exam' => $exam]);
     }
 
     /**
@@ -35,15 +35,15 @@ class ExamController extends Controller
      */
     public function create()
     {
-        $subject=Subject::pluck('id','subject_name');
-        $class=Classes::pluck('class_id','class_name');
-        return view('backend.exam.create',['subject'=>$subject,'class'=>$class]);
+        $subject = Subject::pluck('id', 'subject_name');
+        $class = Classes::pluck('class_id', 'class_name');
+        return view('backend.exam.create', ['subject' => $subject, 'class' => $class]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,18 +54,17 @@ class ExamController extends Controller
         $exam->description = $request->description;
         $exam->class_id = $request->class_name;
         $exam->subject_id = $request->subject_name;
-        $exam->exam_date=$request->exam_date;
-        $exam->start_time=$request->start_time;
-        $exam->end_time=$request->end_time;
-        $exam->question_file=null;
-        if($request->hasfile('file'))
-        {
+        $exam->exam_date = $request->exam_date;
+        $exam->start_time = $request->start_time;
+        $exam->end_time = $request->end_time;
+        $exam->question_file = null;
+        if ($request->hasfile('file')) {
             $file = $request->file('file');
             //dd($file);
             $extension = $file->getClientOriginalExtension(); // getting image extension
-            $filename =time().'.'.$extension;
+            $filename = time() . '.' . $extension;
             $file->move('uploads/question/', $filename);
-            $exam->question_file=$filename;
+            $exam->question_file = $filename;
         }
 
         $exam->save();
@@ -77,7 +76,7 @@ class ExamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -88,7 +87,7 @@ class ExamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -99,8 +98,8 @@ class ExamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -111,18 +110,19 @@ class ExamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $exam=Exam::find($id);
+        $exam = Exam::find($id);
         $exam->delete();
         return redirect('/exam');
     }
+
     public function download($file)
     {
-        $file= public_path(). "/uploads/question/".$file;
+        $file = public_path() . "/uploads/question/" . $file;
 
         $headers = array(
             'Content-Type: application/pdf',

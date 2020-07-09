@@ -17,13 +17,13 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        $score=DB::table('score')
-            ->select('score.id','table_students.name','exam.exam_name','score.Score','score.Status')
-            ->join('table_students','table_students.id','=','score.student_id')
-            ->join('exam','exam.id','=','score.exam_id')
+        $score = DB::table('score')
+            ->select('score.id', 'table_students.name', 'exam.exam_name', 'score.Score', 'score.Status')
+            ->join('table_students', 'table_students.id', '=', 'score.student_id')
+            ->join('exam', 'exam.id', '=', 'score.exam_id')
             ->get();
 
-        return view('backend.score.show',['score'=>$score]);
+        return view('backend.score.show', ['score' => $score]);
     }
 
     /**
@@ -33,36 +33,33 @@ class ScoreController extends Controller
      */
     public function create()
     {
-        $student=Student::pluck('id','name');
-        $exam=Exam::pluck('id','exam_name');
-        return view('backend.score.create',['student'=>$student,'exam'=>$exam]);
+        $student = Student::pluck('id', 'name');
+        $exam = Exam::pluck('id', 'exam_name');
+        return view('backend.score.create', ['student' => $student, 'exam' => $exam]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-       // dd($request->all());
-        $score =new Score();
-        $score->student_id=$request->student;
-        $score->exam_id=$request->exam;
-        $score->Score=$request->score;
+        // dd($request->all());
+        $score = new Score();
+        $score->student_id = $request->student;
+        $score->exam_id = $request->exam;
+        $score->Score = $request->score;
 
-        if ($request->score < 90)
-        {
-            $score->Status='Fail';
+        if ($request->score < 90) {
+            $score->Status = 'Fail';
         }
-        if ($request->score >= 90)
-        {
-            $score->Status='Pass';
+        if ($request->score >= 90) {
+            $score->Status = 'Pass';
         }
-        if ($request->score > 120)
-        {
-            $score->Status='Qualify';
+        if ($request->score > 120) {
+            $score->Status = 'Qualify';
         }
 
         $score->save();
@@ -77,7 +74,7 @@ class ScoreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -88,7 +85,7 @@ class ScoreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -99,8 +96,8 @@ class ScoreController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -111,12 +108,12 @@ class ScoreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $score=Score::find($id);
+        $score = Score::find($id);
         $score->delete();
         return redirect('/score');
 

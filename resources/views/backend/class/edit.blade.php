@@ -37,7 +37,9 @@
                                                 <div class="container">
 
                                                     <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" method="POST" action="{{ route('class.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
+                                                    <form name="studentForm" id="studentForm" method="POST"
+                                                          action="{{ route('class.store') }}"
+                                                          data-parsley-validate="true" enctype="multipart/form-data">
                                                         {!! csrf_field() !!}
 
                                                         <div class="row">
@@ -51,9 +53,11 @@
 
                                                                         @foreach($teacher as $key =>$value)
                                                                             @if($class[0]->name == $key)
-                                                                                <option selected value="{{ $value }}">{{ $key }}</option>
+                                                                                <option selected
+                                                                                        value="{{ $value }}">{{ $key }}</option>
                                                                             @endif
-                                                                                <option value="{{ $value}}">{{ $key }}</option>
+                                                                            <option
+                                                                                value="{{ $value}}">{{ $key }}</option>
 
                                                                         @endforeach
                                                                     </select>
@@ -81,8 +85,11 @@
                                                                 <div class="pull-left">
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a class="btn btn-warning" href="{{route('class.index')}}"> Back to Listing</a>
-                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                    <a class="btn btn-warning"
+                                                                       href="{{route('class.index')}}"> Back to
+                                                                        Listing</a>
+                                                                    <button type="submit" class="btn btn-success">Save
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
