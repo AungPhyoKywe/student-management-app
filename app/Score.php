@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Score extends Model
+{
+    protected $table='score';
+
+    protected $fillable = [
+        'student_id', 'exam_id','Score','Status'
+    ];
+}
