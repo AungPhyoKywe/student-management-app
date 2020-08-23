@@ -18,7 +18,7 @@ class TeacherCheck
     {
         $roleUser = Auth::User()->role->pluck('name');
 
-        if($roleUser[0] == 'teacher' || $roleUser[0] == 'Superadmin'){
+        if($roleUser[0] == 'Superadmin'){
 
             return $next($request);
         }else{

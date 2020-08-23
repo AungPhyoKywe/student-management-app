@@ -286,12 +286,14 @@
                                 <p>Student report</p>
                             </a>
                         </li>
+                        @if(Auth()->user()->hasRole('Superadmin'))
                         <li class="nav-item">
                             <a href="{{route('tr_report.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Teachers report</p>
                             </a>
                         </li>
+                        @endif
 
                     </ul>
                 </li>
