@@ -14,13 +14,12 @@
             <div class="image">
                 @if(Auth()->user()->hasRole('Superadmin'))
                 <img src="/dist/img/user4-128x128.jpg" class="img-circle elevation-2" alt="User Image">
-                @endif
-                @if(Auth()->user()->hasRole('teacher'))
-                    <img src="/uploads/teacher/{{Auth()->user()->profile_image}}" class="rounded-circle" style="width: 40px;height: 40px;">
+                @else
+                 <img src="/uploads/teacher/{{Auth()->user()->profile_image}}" class="rounded-circle" style="width: 40px;height: 40px;">
                 @endif
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ __('msg.'.Auth()->user()->name) }}</a>
+                <a href="#" class="d-block">{{ __(Auth()->user()->name) }}</a>
             </div>
         </div>
 
@@ -222,7 +221,7 @@
 
                     </ul>
                 </li>
-
+            @if(Auth()->user()->hasRole('Superadmin'))
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-money-check-alt"></i>
@@ -230,6 +229,7 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('payment.index')}}" class="nav-link">
@@ -243,10 +243,10 @@
                                 <p>Payment Add</p>
                             </a>
                         </li>
-
                     </ul>
+                   
                 </li>
-
+                 @endif
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -271,6 +271,7 @@
 
                     </ul>
                 </li>
+                 @if(Auth()->user()->hasRole('Superadmin'))
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-book"></i>
@@ -279,24 +280,19 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                   
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('st_report.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Student report</p>
+                                <p>School report</p>
                             </a>
                         </li>
-                        @if(Auth()->user()->hasRole('Superadmin'))
-                        <li class="nav-item">
-                            <a href="{{route('tr_report.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Teachers report</p>
-                            </a>
-                        </li>
-                        @endif
 
                     </ul>
+                    
                 </li>
+                @endif
 
             </ul>
         </nav>

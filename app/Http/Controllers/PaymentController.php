@@ -6,6 +6,7 @@ use App\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use App\Student;
 
 class PaymentController extends Controller
 {
@@ -34,11 +35,8 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        $payment = DB::table('enrolments')
-            ->select('students.id', 'students.name', 'classes.class_name')
-            ->join('students', 'enrolments.student_id', '=', 'students.id')
-            ->join('classes', 'classes.class_id', '=', 'enrolments.class_id')
-            ->get();
+        $payment = Student::all();
+        //dd($payment[0]);
 
         return view('backend.payment.create', ['payment' => $payment]);
     }

@@ -6,6 +6,7 @@ use Closure;
 use Auth;
 use App\Http\Requests;
 use App\User;
+use Illuminate\Support\Facades\Gate;
 class LoginCheck
 {
     /**
@@ -21,12 +22,14 @@ class LoginCheck
         $roleUser = Auth::User()->role->pluck('name');
 
         //dd($roleUser);
+        if (Gate::allows('admin', auth()->user()) || Gate::allows('teacher', auth()->user())) {
 
-        if($roleUser[0] == 'Superadmin' || $roleUser[0] == 'teacher'){
+           return $next($request);
 
-            return $next($request);
         }else{
             return redirect('/login');
         }
+ 
+        
     }
 }

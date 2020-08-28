@@ -23,8 +23,11 @@ Route::get('/404','PageNotFountController@index');
     Route::group(['middleware' => ['teacher']], function() {
 
     Route::resource('teacher', 'TeacherController');
-    Route::get('/teachers/{id}', 'TeacherController@destroy');
+    Route::delete('/teachers/{id}', 'TeacherController@destroy');
     Route::resource('tr_report','TeacherReportController');
+    Route::resource('payment','PaymentController');
+    Route::delete('/payments/{id}','PaymentController@destroy');
+    Route::get('/invoice/{id}','PaymentController@invoice');
 
     });
 
@@ -39,7 +42,6 @@ Route::group(['prefix'=>'{local}'],function (){
     Route::resource('class', 'ClassController');
     Route::resource('student', 'StudentController');
     Route::resource('st_report','StudentReportController');
-    Route::resource('payment','PaymentController');
     Route::resource('score','ScoreController');
     Route::resource('timetable', 'TimetableController');
     Route::resource('enroll', 'EnrolmentController');
@@ -47,8 +49,6 @@ Route::group(['prefix'=>'{local}'],function (){
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
    // Route::get('/pdf','PaymentController@print_pdf');
-    Route::delete('/payments/{id}','PaymentController@destroy');
-    Route::delete('/invoice/{id}','PaymentController@invoice');
     Route::delete('/subjects/{id}','SubjectController@destroy');
     Route::delete('/download/{file}', 'ExamController@download');
     Route::any('/search', 'AttController@search')->name('search');

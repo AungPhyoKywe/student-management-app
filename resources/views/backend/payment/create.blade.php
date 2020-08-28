@@ -78,7 +78,7 @@
                                                                             data-parsley-maxlength="255">
                                                                         @foreach($payment as $p)
 
-                                                                        <option value="{{$p->id}}">{{$p->name }} - ({{$p->class_name}})</option>
+                                                                        <option value="{{$p->id}}">{{$p->name }}</option>
                                                                         @endforeach
 
                                                                     </select>

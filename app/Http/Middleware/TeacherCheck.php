@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Gate;
 class TeacherCheck
 {
     /**
@@ -16,14 +17,13 @@ class TeacherCheck
      */
     public function handle($request, Closure $next)
     {
-        $roleUser = Auth::User()->role->pluck('name');
-
-        if($roleUser[0] == 'Superadmin'){
+        if ( Gate::allows('admin', auth()->user()) ) {
 
             return $next($request);
-        }else{
-            return redirect('/login');
-        }
+ 
+         }else{
+             return redirect('/login');
+         }
 
     }
 }
