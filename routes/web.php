@@ -13,9 +13,9 @@
 Auth::routes();
 
 Route::get('/',function (){
-    return redirect('/login');
+    return view('home');
 });
-
+Auth::routes(['register' => false]);
 //page not found
 Route::get('/404','PageNotFountController@index');
 
@@ -47,17 +47,17 @@ Route::group(['prefix'=>'{local}'],function (){
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
    // Route::get('/pdf','PaymentController@print_pdf');
-    Route::get('/payments/{id}','PaymentController@destroy');
-    Route::get('/invoice/{id}','PaymentController@invoice');
-    Route::get('/subjects/{id}','SubjectController@destroy');
-    Route::get('/download/{file}', 'ExamController@download');
+    Route::delete('/payments/{id}','PaymentController@destroy');
+    Route::delete('/invoice/{id}','PaymentController@invoice');
+    Route::delete('/subjects/{id}','SubjectController@destroy');
+    Route::delete('/download/{file}', 'ExamController@download');
     Route::any('/search', 'AttController@search')->name('search');
-    Route::get('/students/{id}', 'StudentController@destroy');
-    Route::get('/exams/{id}','ExamController@destroy');
-    Route::get('/scores/{id}','ScoreController@destroy');
-    Route::get('/timetables/{id}', 'TimetableController@destroy');
-    Route::get('/enrolls/{id}', 'EnrolmentController@destroy');
-    Route::get('/classes/{id}', 'ClassController@destroy');
+    Route::delete('/students/{id}', 'StudentController@destroy');
+    Route::delete('/exams/{id}','ExamController@destroy');
+    Route::delete('/scores/{id}','ScoreController@destroy');
+    Route::delete('/timetables/{id}', 'TimetableController@destroy');
+    Route::delete('/enrolls/{id}', 'EnrolmentController@destroy');
+    Route::delete('/classes/{id}', 'ClassController@destroy');
 
 });
 
