@@ -48,6 +48,7 @@
                                      <td>{{ $d->ph_no }}</td>
                                      <td>{{ $d->address }}</td>
                                      <td>
+                                        <a href="#"class="btn-sm btn-primary"><i class="fas fa-eye"></i></a>
                                          <a href="{{route('student.edit',$d->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                          <a href="#" onclick="confirmation({{ $d->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                      </td>

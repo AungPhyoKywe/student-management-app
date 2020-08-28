@@ -33,7 +33,7 @@
 
                                             <!-- start content body panel -->
 
-                                            <div class="shadow-sm">
+                                            
                                                 <div class="container">
 
                                                     <!-- start form -->
@@ -200,8 +200,7 @@
                                                 </div>
 
                                                 <!-- end form -->
-                                                <br><br><br>
-                                            </div>
+                
                                             <!-- end content body panel -->
                                         </div>
                                     </section>
@@ -234,4 +233,4 @@
             readURL(this);
         });
     </script>
-@stop
+@endsection
