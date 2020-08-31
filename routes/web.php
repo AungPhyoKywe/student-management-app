@@ -28,6 +28,11 @@ Route::get('/404','PageNotFountController@index');
     Route::resource('payment','PaymentController');
     Route::delete('/payments/{id}','PaymentController@destroy');
     Route::get('/invoice/{id}','PaymentController@invoice');
+    Route::resource('class', 'ClassController');
+    Route::get('/classes/{id}', 'ClassController@destroy');
+    Route::resource('subject', 'SubjectController');
+    Route::get('/subjects/{id}','SubjectController@destroy');
+
 
     });
 
@@ -36,28 +41,26 @@ Route::group(['middleware' => ['login']], function() {
     //backend
 Route::group(['prefix'=>'{local}'],function (){
 
-    Route::get('/backend/', 'SuperAdminController@index');
+    Route::get('backend', 'SuperAdminController@index');
 });
     //student
-    Route::resource('class', 'ClassController');
+    
     Route::resource('student', 'StudentController');
     Route::resource('st_report','StudentReportController');
     Route::resource('score','ScoreController');
     Route::resource('timetable', 'TimetableController');
-    Route::resource('enroll', 'EnrolmentController');
-    Route::resource('subject', 'SubjectController');
+    Route::resource('enroll', 'EnrolmentController'); 
     Route::resource('att', 'AttController');
     Route::resource('exam', 'ExamController');
    // Route::get('/pdf','PaymentController@print_pdf');
-    Route::delete('/subjects/{id}','SubjectController@destroy');
-    Route::delete('/download/{file}', 'ExamController@download');
+    Route::get('/download/{file}', 'ExamController@download');
     Route::any('/search', 'AttController@search')->name('search');
-    Route::delete('/students/{id}', 'StudentController@destroy');
-    Route::delete('/exams/{id}','ExamController@destroy');
-    Route::delete('/scores/{id}','ScoreController@destroy');
-    Route::delete('/timetables/{id}', 'TimetableController@destroy');
-    Route::delete('/enrolls/{id}', 'EnrolmentController@destroy');
-    Route::delete('/classes/{id}', 'ClassController@destroy');
+    Route::get('/students/{id}', 'StudentController@destroy');
+    Route::get('/exams/{id}','ExamController@destroy');
+    Route::get('/scores/{id}','ScoreController@destroy');
+    Route::get('/timetables/{id}', 'TimetableController@destroy');
+    Route::get('/enrolls/{id}', 'EnrolmentController@destroy');
+    
 
 });
 

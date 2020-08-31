@@ -44,7 +44,7 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <strong>Teacher:</strong>
-                                                                    <select class="form-control"
+                                                                    <select readonly class="form-control"
                                                                             name="teacher"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">

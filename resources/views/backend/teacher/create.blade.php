@@ -38,7 +38,7 @@
 
                                                     <!-- start form -->
                                                     <form name="studentForm" id="studentForm" method="POST" action="{{ route('teacher.store') }}" data-parsley-validate="true" enctype="multipart/form-data">
-                                                        {!! csrf_field() !!}
+                                                        @csrf
 
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
@@ -161,12 +161,22 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                                 <div class="form-group">
                                                                     <strong>Image:</strong><br>
-                                                                    <img src="" id="profile-img-tag" style="width: 150px;height: 150px;border-bottom-color: #0c525d" /><br><br>
-                                                                    <input class="form-group  btn-primary" type="file" name="file" id="profile-img">
+                                                                    <div style="height:0px;overflow:hidden;">
+                                                                        <input class="btn-primary" type="file"
+                                                                               name="file" id="profile-img"><i
+                                                                            class="fas fa-cloud"></i></input>
+                                                                    </div>
+                                                                    <button type="button" class="btn btn-primary"
+                                                                            style="opacity: 0.7; position: absolute;"
+                                                                            onclick="chooseFile('#profile-img');"
+                                                                            data-placement="left" data-toggle="tooltip"
+                                                                            title="Upload new image"><i
+                                                                            class="fas fa-upload"></i></button>
+                                                                    <img src="" id="profile-img-tag"
+                                                                         style="border:1px solid lightgray; width: 200px; height: 200px;"/>
 
                                                                 </div>
                                                             </div>
-                                                        </div>
 
                                                         <div class="row">
                                                             <div class="col-lg-12 margin-tb">
@@ -196,7 +206,16 @@
             </div>
         </section>
     </div>
+    
+@endsection
+
+@section('js')
     <script type="text/javascript">
+
+        function chooseFile(input_div) {
+            $(input_div).click();
+        }
+
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -207,8 +226,10 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#profile-img").change(function(){
+
+        $("#profile-img").change(function () {
             readURL(this);
         });
     </script>
-@stop
+
+@endsection

@@ -6,7 +6,7 @@
 @include('partials.sidebar')
 
 @yield('content')
-
+@yield('js')
 <div id="loading"></div>
 
 

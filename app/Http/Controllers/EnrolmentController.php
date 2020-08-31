@@ -18,8 +18,9 @@ class EnrolmentController extends Controller
     public function index()
     {
         $enrol = Student::all();
-
-        return view('backend.enrolment.show', ['enrol' => $enrol]);
+        //dd($enrol);
+        //dd($enrol[0]->classes);
+        return view('backend.enrolment.show', ['enrol' => $enrol[0]->classes]);
     }
 
     /**

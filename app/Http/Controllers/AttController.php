@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Attendance;
 use App\Classes;
 use App\Enroll;
+use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
@@ -23,6 +24,7 @@ class AttController extends Controller
             ->join('students','attendance.student_id','=','students.id')
             ->join('classes','classes.class_id','=','attendance.class_id')
             ->get();
+            //dd($attend);
         return view('backend.attendance.show',['attend'=>$attend]);
     }
 
@@ -118,11 +120,7 @@ class AttController extends Controller
     {
         $class_id=$request->class;
         $date=$request->date;
-        $class=DB::table('enrolments')
-            ->select('students.name','students.id')
-            ->join('students','enrolments.student_id','=','students.id')
-            ->where('enrolments.class_id',$class_id)
-            ->get();
+        $class= Student::all();
         //dd([$class]);
         return view('backend.attendance.list',['class'=>$class,'class_id'=>$class_id,'date'=>$date]);
 

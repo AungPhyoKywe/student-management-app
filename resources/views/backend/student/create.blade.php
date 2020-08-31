@@ -212,6 +212,9 @@
             </div>
         </section>
     </div>
+    
+@endsection
+@section('js')
     <script type="text/javascript">
 
         function chooseFile(input_div) {
@@ -233,4 +236,5 @@
             readURL(this);
         });
     </script>
+
 @endsection

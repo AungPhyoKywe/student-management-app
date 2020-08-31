@@ -1,5 +1,8 @@
-
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+@if(Auth()->user()->hasRole('Superadmin'))
+    <aside class="main-sidebar sidebar-dark-info elevation-4">
+@else
+    <aside class="main-sidebar sidebar-light-success elevation-4">
+@endif
     <!-- Brand Logo -->
     <a href="/{{App::getLocale()}}/backend" class="brand-link">
         <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -152,6 +155,7 @@
 
                     </ul>
                 </li>
+                @if(Auth()->user()->hasRole('Superadmin'))
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-graduation-cap"></i>
@@ -198,6 +202,9 @@
 
                     </ul>
                 </li>
+                @endif
+
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-book-open"></i>

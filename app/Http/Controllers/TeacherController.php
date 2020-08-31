@@ -39,6 +39,7 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $this->validate($request, [
             'name' => 'required|max:255',
             'dob'=>'required',
@@ -70,12 +71,13 @@ class TeacherController extends Controller
            $user->profile_image=$filename;
         }
         
+        
         $user->save();
         $role = new RoleUser();
         $role->user_id=$user->id;
         $role->role_id='2';
         $role->save();
-
+        //dd($request->all());
         return  redirect('/teacher');
     }
 

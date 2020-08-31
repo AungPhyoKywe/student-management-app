@@ -33,11 +33,11 @@
 
                                 <tr>
                                     <td>{{ $e->name }}</td>
-                                    <td>{{ $e->classes[0]->class_name }}</td>
-                                    <td>{{ $e->classes[0]->created_at }}</td>
+                                    <td>{{ isset($e->classes[0]->class_name)?$e->classes[0]->class_name:'' }}</td>
+                                    <td>{{ isset($e->classes[0]->created_at)?$e->classes[0]->created_at:'' }}</td>
                                     <td>
-                                        <a href="{{route('enroll.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                        <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                        <a href="{{route('enroll.edit',1) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                        <a href="#" onclick="confirmation({{ 1 }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
