@@ -20,7 +20,7 @@ class EnrolmentController extends Controller
         $enrol = Student::all();
         //dd($enrol);
         //dd($enrol[0]->classes);
-        return view('backend.enrolment.show', ['enrol' => $enrol[0]->classes]);
+        return view('backend.enrolment.show', ['enrol' => $enrol]);
     }
 
     /**
@@ -33,6 +33,7 @@ class EnrolmentController extends Controller
         $enrol = Enroll::pluck('student_id');
 
         $student = Student::pluck('id', 'name');
+       // dd($student);
         $class = Classes::pluck('class_id', 'class_name');
         $arr = [];
         foreach ($enrol as $key => $value) {

@@ -52,7 +52,7 @@
                                                                             data-parsley-maxlength="255">
                                                                         @foreach($student as $key => $stu)
 
-                                                                            <option value="{{ $stu }}">{{ !in_array($stu,$enrol)?$key:""}}</option>
+                                                                            <option value="{{ $stu }}">{{ $key}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
