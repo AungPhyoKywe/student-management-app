@@ -13,7 +13,7 @@ class AdminsTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'id'=>'1',
-            'name' => 'Superadmin',
+            'name' => 'AungPhyoKywe',
             'email' => 'hinata0777@gmail.com',
             'profile_image'=>'admin.jpg',
             'age'=>'19',

@@ -121,7 +121,7 @@ class AttController extends Controller
         $class_id=$request->class;
         $date=$request->date;
         $class= Student::all();
-        //dd([$class]);
+        //dd($class[0]->classes);
         return view('backend.attendance.list',['class'=>$class,'class_id'=>$class_id,'date'=>$date]);
 
         ;
