@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
       .login-page{
-          background-image: url("img/background2.jpg");
+          background-image: url("/img/background2.jpg");
           background-repeat: no-repeat;
           background-size:cover;
           background-attachment: fixed;
@@ -33,15 +33,15 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <b>Schools</b>Management
+        <b>ကျောင်း</b>စီမံခန့်ခွဲမှု
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">အသုံးပြုရန်အတွက်လော့အင်ဝင်ပါ</p>
             @error('email')
             <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
+                သင့်မေးလ်ိပ်စာမှားယွင်းနေပါတယ်
             </span>
             @enderror
 
@@ -60,7 +60,7 @@
                 </div>
                 @error('password')
                 <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
+                    သင့်စကားဝှက်မှားယွင်းနေပါတယ်
                 </span>
                 @enderror
                 <div class="input-group mb-3">
@@ -76,7 +76,7 @@
                     <!-- /.col -->
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary btn-block">
-                            {{ __('Login') }}
+                            လော့အင်
                         </button>
 
                     </div>
@@ -89,7 +89,7 @@
             <p class="mb-1">
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        သင့်စကားဝှက်မေ့နေပါသာလား?
                     </a>
                 @endif
             </p>

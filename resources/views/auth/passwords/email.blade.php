@@ -19,8 +19,20 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+
+        .login-page{
+            background-image: url("/img/background2.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+            background-position: center;
+  
+        }
+      
+      </style>
 </head>
-<body class="hold-transition login-page"style="background-image: url('{{asset('img/banner/home-banner.jpg')}}')">
+<body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
         <b>Schools</b>Management
