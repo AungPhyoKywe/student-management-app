@@ -65,10 +65,19 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <strong>Class Name:</strong>
-                                                                    <input class="form-control"
-                                                                           name="class_name"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255">
+                                                                    <select class="form-control"
+                                                                        name="class_name"
+                                                                        data-parsley-required="true"
+                                                                        data-parsley-maxlength="255">
+
+        
+                                                                            <option value="GRADE A">GRADE(11) A</option>
+                                                                            <option value="GRADE B">GRADE(11) B</option>
+                                                                            <option value="GRADE C">GRADE(11) C</option>
+                                                                            <option value="GRADE D">GRADE(11) D</option>
+
+                                                                        
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>

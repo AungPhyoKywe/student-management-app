@@ -258,7 +258,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-users"></i>
-                        <p>ကျောင်းခေါ်ချိန်
+                        <p>ကျောင်းခေါ်ကြိမ်
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -266,13 +266,13 @@
                         <li class="nav-item">
                             <a href="{{route('att.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းခေါ်ချိန်စာရင်း</p>
+                                <p>ကျောင်းခေါ်ကြိမ်စာရင်း</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('att.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းခေါ်ချိန်စာရင်းထည့်ရန်</p>
+                                <p>ကျောင်းခေါ်ကြိမ်စာရင်းထည့်ရန်</p>
                             </a>
                         </li>
 

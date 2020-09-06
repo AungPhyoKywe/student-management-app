@@ -44,11 +44,23 @@
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <strong>Subject Name:</strong>
-                                                                    <input class="form-control"
-                                                                           type="text"
+                                                                    <select class="form-control"
                                                                             name="subject_name"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
+
+                                                                            <option value="Myanmar">Myanmar</option>
+                                                                            <option value="English">English</option>
+                                                                            <option value="Mathematics">Mathematics</option>
+                                                                            <option value="Geography">Geography</option>
+                                                                            <option value="Eco">Eco</option>
+                                                                            <option value="Biology">Biology</option>
+                                                                            <option value="Physics">Physics</option>
+                                                                            <option value="Chmesitry">Chmesitry</option>
+
+                                                                            
+                                                                        
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
