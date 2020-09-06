@@ -5,7 +5,7 @@
 @endif
 
     <!-- Brand Logo -->
-    <a href="/{{App::getLocale()}}/backend" class="brand-link">
+    <a href="/dashboard" class="brand-link">
         <img src="/img/school_logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light"> <b>ကျောင်း</b>စီမံခန့်ခွဲမှု</span>

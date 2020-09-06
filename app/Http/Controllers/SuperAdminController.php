@@ -21,9 +21,9 @@ class SuperAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($local)
+    public function index()
     {
-        App::setLocale($local);
+        
         $payment = Payment::count();
         $student = Student::count();
         $exam = Exam::count();

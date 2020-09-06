@@ -19,15 +19,12 @@ class LoginCheck
     public function handle($request, Closure $next)
     {
 
-        $roleUser = Auth::User()->role->pluck('name');
-
-        //dd($roleUser);
         if (Gate::allows('admin', auth()->user()) || Gate::allows('teacher', auth()->user())) {
 
            return $next($request);
 
         }else{
-            return redirect('/login');
+            return redirect()->back();
         }
  
         

@@ -22,7 +22,7 @@ class TeacherCheck
             return $next($request);
  
          }else{
-             return redirect('/404');
+            return redirect()->back();
          }
 
     }

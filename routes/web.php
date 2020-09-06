@@ -39,10 +39,10 @@ Route::get('/404','PageNotFountController@index');
 Route::group(['middleware' => ['login']], function() { 
 
     //backend
-Route::group(['prefix'=>'{local}'],function (){
 
-    Route::get('backend', 'SuperAdminController@index');
-});
+
+    Route::get('dashboard', 'SuperAdminController@index')->name('dashboard');
+
     //student
     
     Route::resource('student', 'StudentController');
