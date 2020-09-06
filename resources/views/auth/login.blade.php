@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>School | MN</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel='icon' href='/img/school_logo.jpg' type='image/x-icon'/ >
+
     <style>
-      .login-page{
-          background-image: url("/img/background2.jpg");
-          background-repeat: no-repeat;
-          background-size:cover;
-          background-attachment: fixed;
-          background-position: center;
+       
+      img{
+          width: 70px;
+          border-radius: 50%;
 
       }
     
@@ -33,7 +33,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <b>ကျောင်း</b>စီမံခန့်ခွဲမှု
+        <img src="/img/school_logo.jpg">
     </div>
     <!-- /.login-logo -->
     <div class="card">

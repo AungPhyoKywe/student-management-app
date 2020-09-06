@@ -3,19 +3,28 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <br><br>
-        <!-- Content Header (Page header) -->
-        <!-- Main content -->
+        <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>ကျောင်းသားစာရင်းသွင်းရန်</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Students Add</li>
+                  </ol>
+                </div>
+              </div>
+            </div><!-- /.container-fluid -->
+          </section>
         <section class="content">
             <div class="row">
 
                 <div class="col-12">
 
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Create Student</h3>
-                        </div>
-                        <!-- /.card-header -->
+                        
                         <div class="card-body">
 
 
@@ -45,7 +54,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Name:</strong>
+                                                                    <strong>အမည်:</strong>
                                                                     <input type="text"
                                                                            name="name"
                                                                            value="{{ old('name') }}"
@@ -59,7 +68,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Age:</strong>
+                                                                    <strong>အသက်:</strong>
                                                                     <select class="form-control"
                                                                             name="age"
                                                                             data-parsley-required="true"
@@ -77,7 +86,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Father Name:</strong>
+                                                                    <strong>အဖအမည်:</strong>
                                                                     <input type="text"
                                                                            name="fname"
                                                                            value="{{ old('fname') }}"
@@ -91,7 +100,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Date Of Birth:</strong>
+                                                                    <strong>မွေးသက္ကရဇ်:</strong>
                                                                     <input type="date"
                                                                            name="dob"
                                                                            value="{{ old('dob') }}"
@@ -105,7 +114,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Gender:</strong>
+                                                                    <strong>ကျား/မ:</strong>
                                                                     <select class="form-control"
                                                                             name="gender"
                                                                             data-parsley-required="true"
@@ -120,7 +129,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Reglious:</strong>
+                                                                    <strong>ကိုးကွယ်သည့်ဘာသာ :</strong>
                                                                     <select class="form-control"
                                                                             name="reglious"
                                                                             data-parsley-required="true"
@@ -136,7 +145,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Phone:</strong>
+                                                                    <strong>ဖုန်း :</strong>
                                                                     <input type="text"
                                                                            name="phone"
                                                                            value="{{ old('phone') }}"
@@ -150,7 +159,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <strong>Address:</strong>
+                                                                    <strong>လိပ်စာ:</strong>
                                                                     <input type="text"
                                                                            name="address"
                                                                            placeholder="address"
@@ -163,7 +172,7 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                                 <div class="form-group">
-                                                                    <strong>Image:</strong><br>
+                                                                    <strong>ဓာတ်ပုံ:</strong><br>
                                                                     <div style="height:0px;overflow:hidden;">
                                                                         <input class="btn-primary" type="file"
                                                                                name="file" id="profile-img"><i

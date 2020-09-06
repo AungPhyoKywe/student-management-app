@@ -25,7 +25,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
-<
+
 <script type="text/javascript">
     setTimeout(function(){
 
@@ -38,6 +38,21 @@
     }
     $(function () {
         $('#studentForm').parsley();
+    });
+    function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 1000);
+    }
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+    onReady(function() {
+        setVisible('.page', true);
+        setVisible('#loading', false);
     });
 </script>
 

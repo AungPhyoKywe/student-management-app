@@ -21,21 +21,18 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
 
-        .login-page{
-            background-image: url("/img/background2.jpg");
-            background-repeat: no-repeat;
-            background-size:cover;
-            background-attachment: fixed;
-            background-position: center;
-  
-        }
+        img{
+          width: 70px;
+          border-radius: 50%;
+
+      }
       
       </style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <b>Schools</b>Management
+        <img src="/img/school_logo.jpg">
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -46,7 +43,8 @@
         @endif
 
         <div class="card-body login-card-body">
-            <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+            <p class="login-box-msg">သင့်ရဲ့မေးလ်လိပ်စာကိုထည့်ပါ
+            </p>
 
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
@@ -67,7 +65,7 @@
                 <div class="row">
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Send Password Reset Link') }}
+                                မေးလ်ပို့ပါ
                         </button>
                     </div>
                     <!-- /.col -->
@@ -75,7 +73,7 @@
             </form>
 
             <p class="mt-3 mb-1">
-                <a href="/login">Login</a>
+                <a href="/login">လော့ပ်အင်သို့</a>
             </p>
 
         </div>
