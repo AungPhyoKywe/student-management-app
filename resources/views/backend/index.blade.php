@@ -1,207 +1,97 @@
 @extends('partials.master')
 
 @section('content')
-    <div class="content-wrapper">
-        <br><br>
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Students')}}</span>
-                                <span class="info-box-number">{{$student}}</span>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$student}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($student / 100)*100}}%{{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    @if($teacher >0)
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fas fa-users"></i></span>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Teachers')}}</span>
-                                <span class="info-box-number">{{$teacher}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$teacher}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($teacher / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    @endif
-                    <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Time Tables')}}</span>
-                                <span class="info-box-number">{{$time}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$time}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($time / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-                    <!-- /.col -->
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fas fa-users"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Student Enroll')}}</span>
-                                <span class="info-box-number">{{$enrol}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$enrol}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($enrol / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fas fa-book-open"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Exam')}}</span>
-                                <span class="info-box-number">{{$exam}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$exam}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($exam / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="fas fa-graduation-cap"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{ __('msg.Class') }}</span>
-                                <span class="info-box-number">{{$class}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$class}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($class / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-                    <!-- /.col -->
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Subjects')}}</span>
-                                <span class="info-box-number">{{$subject}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$subject}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($subject / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{__('msg.Payments')}}</span>
-                                <span class="info-box-number">{{$payment}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$payment}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                  {{($payment / 100)*100}}% {{__('msg.Increase in 30 Days')}}
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">{{ __('msg.Attendence')}}</span>
-                                <span class="info-box-number">{{$att}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: {{$att}}%"></div>
-                                </div>
-                                <span class="progress-description">
-                                    {{($att / 100)*100}} % {{__('msg.Increase in 30 Days')}}
-                                 </span>
-                                <example-component></example-component>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-                    <!-- /.col -->
-                </div>
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-        </section>
-        </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-@stop
+                <p>Bounce Rate</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65</h3>
+
+                <p>Unique Visitors</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+       
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+@endsection

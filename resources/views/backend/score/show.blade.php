@@ -3,84 +3,79 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <br><br>
-        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>Score List</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Score List</li>
+                  </ol>
+                </div>
+              </div>
+            </div><!-- /.container-fluid -->
+          </section>
+            <section class="content">
+                <div class="row">
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="row">
+                    <div class="col-12">
+                        @include('partials.toast')
+                        <div class="card">
+                            
+                            <div class="card-body">
+                                <table id="example2" class="table  table-striped table-responsive-sm  nowrap"style="width: 100%;">
+                                    <thead>
+                                    <tr class="table-info">
+                                        <th>Student Name</th>
+                                        <th>Exam Name</th>
+                                        <th>Score</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
 
-                <div class="col-12">
-                    @include('partials.toast')
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Class List</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table id="example2" class="table  table-responsive-sm  nowrap"style="width: 100%;" >
-                                <thead>
-                                <tr>
-                                    <th>Student Name</th>
-                                    <th>Exam Name</th>
-                                    <th>Score</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($score as $e)
-                                    @if($e->Status == 'Pass')
-                                    <tr class="table-success">
-                                        <td>{{ $e->name }}</td>
-                                        <td>{{ $e->exam_name }}</td>
-                                        <td>{{ $e->Score }}</td>
-                                        <td>{{ $e->Status }}</td>
-                                        <td>
-                                            <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                            <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
-                                        </td>
                                     </tr>
-                                    @endif
-                                    @if($e->Status == 'Fail')
-                                        <tr class="table-danger">
+                                    </thead>
+                                    <tbody>
+                                    @foreach($score as $e)
+                                        
+                                        <tr>
                                             <td>{{ $e->name }}</td>
                                             <td>{{ $e->exam_name }}</td>
                                             <td>{{ $e->Score }}</td>
-                                            <td>{{ $e->Status }}</td>
+
+                                            @if($e->Status == 'Pass')
+                                            <td class="text-success">{{ $e->Status }}</td>
+                                            @endif
+                                            @if($e->Status == 'Fail')
+                                            <td class="text-danger">{{ $e->Status }}</td>
+                                            @endif
+                                            @if($e->Status == 'Qualify')
+                                            <td class="text-primary">{{ $e->Status }}</td>
+                                            @endif
+
                                             <td>
                                                 <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                                 <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
-                                    @endif
-                                    @if($e->Status == 'Qualify')
-                                        <tr class="table-primary">
-                                            <td>{{ $e->name }}</td>
-                                            <td>{{ $e->exam_name }}</td>
-                                            <td>{{ $e->Score }}</td>
-                                            <td>{{ $e->Status }}</td>
-                                            <td>
-                                                <a href="{{route('score.edit',$e->id) }}" class="btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                                <a href="#" onclick="confirmation({{ $e->id }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                @endforeach
+                                    
+                                        
+                                    @endforeach
 
-                                </tbody>
+                                    </tbody>
 
-                            </table>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.card -->
                     </div>
                     <!-- /.card -->
                 </div>
-                <!-- /.card -->
-            </div>
 
-        </section>
+            </section>
     </div>
 
     <script>

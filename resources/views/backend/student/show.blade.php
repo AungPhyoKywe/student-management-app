@@ -31,9 +31,9 @@
                         
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table  table-responsive  nowrap"style="width: 100%;" >
+                            <table id="example2" class="table  table-striped table-responsive  nowrap"style="width: 100%;" >
                                 <thead>
-                                <tr>
+                                <tr class="table-info">
                                     <th>Student Image</th>
                                     <th>Student Name</th>
                                     <th>Age</th>
