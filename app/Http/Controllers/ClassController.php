@@ -50,7 +50,7 @@ class ClassController extends Controller
         $class->teacher_id=$request->class_teacher;
         $class->save();
 
-        return redirect('/class');
+        return redirect()->route('class.index');
     }
 
     /**
@@ -104,6 +104,6 @@ class ClassController extends Controller
     {
         $class= Classes::where('class_id',$id);
         $class->delete();
-        return  redirect('/class');
+        return redirect()->route('class.index');
     }
 }
