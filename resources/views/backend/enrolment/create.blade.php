@@ -3,19 +3,28 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <br><br>
-        <!-- Content Header (Page header) -->
-        <!-- Main content -->
+        <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>Enrollment Add</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Enroll  /  create</li>
+                  </ol>
+                </div>
+              </div>
+            </div><!-- /.container-fluid -->
+          </section>
         <section class="content">
             <div class="row">
 
                 <div class="col-12">
 
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Create Enrolment</h3>
-                        </div>
-                        <!-- /.card-header -->
+                        
                         <div class="card-body">
 
 
@@ -27,13 +36,20 @@
 
                                             <!-- start content heading panel -->
                                             <div class="panel-heading">
+                                                @if(Session::has('enrol_error'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    This Student is already enroll!
+                                                  </div>
+                                                @endif
 
+                                                
+                                                  
                                             </div>
                                             <!-- end content heading panel -->
 
                                             <!-- start content body panel -->
 
-                                            <div class="shadow-sm">
+                                            
                                                 <div class="container">
 
                                                     <!-- start form -->
@@ -50,9 +66,10 @@
                                                                             name="student_name"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
-                                                                        @foreach($student as $key => $stu)
-
-                                                                            <option value="{{ $stu }}">{{ $key}}</option>
+                                                                        @foreach($student as $stu)
+                                                                       
+                                                                            <option value="{{ $stu->id }}">{{ $stu->name}}</option>
+                                                                       
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
@@ -110,7 +127,7 @@
 
                                                 <!-- end form -->
                                                 <br><br><br>
-                                            </div>
+                                            
                                             <!-- end content body panel -->
                                         </div>
                                     </section>

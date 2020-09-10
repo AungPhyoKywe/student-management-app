@@ -39,9 +39,9 @@
                                 <tbody>
 
                                 @foreach($enrol as $e)
-
+                                @if(isset($e->classes[0]))
                                 <tr>
-                                    <td>{{ $e->name }}</td>
+                                <td>{{$e->name}}</td>
                                     <td>{{ isset($e->classes[0]->class_name)?$e->classes[0]->class_name:'' }}</td>
                                     <td>{{ isset($e->classes[0]->created_at)?$e->classes[0]->created_at:'' }}</td>
                                     <td>
@@ -49,6 +49,7 @@
                                         <a href="#" onclick="confirmation({{ 1 }})"  class="btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
 
                                 </tbody>

@@ -19,7 +19,7 @@ class EnrolmentController extends Controller
     {
         $enrol = Student::all();
         //dd($enrol);
-        //dd($enrol[0]->classes);
+        //dd($enrol[0]->classes[0]);
         return view('backend.enrolment.show', ['enrol' => $enrol]);
     }
 
@@ -30,19 +30,14 @@ class EnrolmentController extends Controller
      */
     public function create()
     {
-        $enrol = Enroll::pluck('student_id');
+       
 
-        $student = Student::pluck('id', 'name');
-       // dd($student);
+        $student = Student::all();
+       //dd($student);
         $class = Classes::pluck('class_id', 'class_name');
-        $arr = [];
-        foreach ($enrol as $key => $value) {
-            $arr[] = $value;
+        
 
-        }
-        //dd($arr);
-
-        return view('backend.enrolment.create', ['class' => $class, 'student' => $student, 'enrol' => $arr]);
+        return view('backend.enrolment.create', ['class' => $class, 'student' => $student]);
     }
 
     /**
@@ -53,12 +48,18 @@ class EnrolmentController extends Controller
      */
     public function store(Request $request)
     {
-        $enroll = new Enroll();
-        $enroll->student_id = $request->student_name;
-        $enroll->class_id = $request->class_name;
-        $enroll->enrolment_date = $request->date;
-        $enroll->save();
-        return redirect('/enroll');
+        $id = $request->student_name;
+        $enroll= Enroll::where('student_id',$id)->get();
+
+        if($enroll->count() >=1){
+            return \redirect()->back()->with('enrol_error','This Student is already enroll!');
+        }
+        $enrollment = new Enroll();
+        $enrollment->student_id = $request->student_name;
+        $enrollment->class_id = $request->class_name;
+        $enrollment->enrolment_date = $request->date;
+        $enrollment->save();
+        return redirect()->route('enroll.index');
     }
 
     /**
@@ -113,6 +114,6 @@ class EnrolmentController extends Controller
     {
         $enroll = Enroll::find($id);
         $enroll->delete();
-        return redirect('/enroll');
+        return redirect()->route('enroll.index');
     }
 }
