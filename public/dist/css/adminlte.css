@@ -19541,6 +19541,7 @@ html.maximized-card {
   border-top: 0;
   color: #666;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .login-card-body .input-group .form-control,
@@ -19556,6 +19557,7 @@ html.maximized-card {
 .login-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text {
   border-color: #80bdff;
+  border-radius: 10px;
 }
 
 .login-card-body .input-group .form-control.is-valid:focus,
@@ -19566,11 +19568,13 @@ html.maximized-card {
 .login-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text {
   border-color: #28a745;
+  border-radius: 10px;
 }
 
 .login-card-body .input-group .form-control.is-invalid:focus,
 .register-card-body .input-group .form-control.is-invalid:focus {
   box-shadow: none;
+  border-radius: 10px;
 }
 
 .login-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text,
@@ -19585,6 +19589,7 @@ html.maximized-card {
   border-left: 0;
   border-top-right-radius: 0.25rem;
   color: #777;
+  border-radius: 10px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 

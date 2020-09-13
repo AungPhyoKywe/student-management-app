@@ -28,12 +28,13 @@
                 <div class="col-12">
 
                     <div class="card">
-                        
+                        <div class="card-header"></div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table  table-striped table-responsive  nowrap"style="width: 100%;" >
                                 <thead>
                                 <tr class="table-info">
+                                    <th></th>
                                     <th>Student Image</th>
                                     <th>Student Name</th>
                                     <th>Age</th>
@@ -50,6 +51,7 @@
                                 <tbody>
                                 @foreach($data as $d)
                                  <tr>
+                                     <td><input class="input" type="checkbox" class="grid-row-checkbox" data-id="{{ $d->id??'' }}"></td>
                                      <td><img class="rounded-circle" src="/uploads/logos/{{$d->profile_image}}"width="40"height="40"></td>
                                      <td>{{ $d->name }}</td>
                                      <td>{{ $d->age }}</td>
@@ -71,8 +73,7 @@
 
                             </table>
                         </div>
-
-                        <!-- /.card-body -->
+                        <div class="card-footer"></div>
                     </div>
                     <!-- /.card -->
                 </div>

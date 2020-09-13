@@ -67,7 +67,7 @@ class ScoreController extends Controller
         toastr()->success('Data has been saved successfully!');
 
 
-        return redirect('/score');
+        return redirect()->route('score.index');
 
     }
 

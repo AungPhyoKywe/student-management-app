@@ -52,7 +52,10 @@ class EnrolmentController extends Controller
         $enroll= Enroll::where('student_id',$id)->get();
 
         if($enroll->count() >=1){
-            return \redirect()->back()->with('enrol_error','This Student is already enroll!');
+
+            toastr()->error('Student Already Enrolled!');
+            
+            return \redirect()->back();
         }
         $enrollment = new Enroll();
         $enrollment->student_id = $request->student_name;

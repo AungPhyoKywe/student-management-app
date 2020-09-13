@@ -7,7 +7,7 @@
             <div class="container-fluid">
               <div class="row mb-2">
                 <div class="col-sm-6">
-                  <h1>ကျောင်းသားစာရင်းသွင်းရန်</h1>
+                  <h1>Add New Student</h1>
                 </div>
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
@@ -24,52 +24,49 @@
                 <div class="col-12">
 
                     <div class="card">
-                        
+                        <div class="card-header"></div>
+                        <!-- start form -->
+                    <form name="studentForm" id="studentForm" method="POST"
+                            action="{{ route('student.store') }}"
+                            data-parsley-validate="true" enctype="multipart/form-data">
+                            {!! csrf_field() !!}
                         <div class="card-body">
-
 
                             <div class="container-fluid">
                                 <div class="container-fluid">
                                     <section class="content">
                                         <!-- start content panel -->
                                         <div class="panel panel-inverse">
-
-                                            <!-- start content heading panel -->
                                             <div class="panel-heading">
 
                                             </div>
-                                            <!-- end content heading panel -->
-
-                                            <!-- start content body panel -->
+                                            
 
                                             
                                                 <div class="container">
 
-                                                    <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" method="POST"
-                                                          action="{{ route('student.store') }}"
-                                                          data-parsley-validate="true" enctype="multipart/form-data">
-                                                        {!! csrf_field() !!}
+                                                    
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>အမည်:</strong>
-                                                                    <input type="text"
+                                                        <div class="form-group row">
+                                                        
+                                                                    <label class="col-sm-2 col-form-label"><strong>Student Name<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text"
                                                                            name="name"
                                                                            value="{{ old('name') }}"
-                                                                           placeholder="Name"
+                                                                           placeholder="Student Name"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>အသက်:</strong>
-                                                                    <select class="form-control"
+                                                        <div class="form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Student Age<span style="color:red">*</span></strong></label>
+                                                                    
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control"
                                                                             name="age"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
@@ -79,43 +76,42 @@
                                                                                 value="{{ $age }}">{{ $age }}</option>
                                                                         @endfor
                                                                     </select>
-                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>အဖအမည်:</strong>
-                                                                    <input type="text"
+                                                        <div class="form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Father Name<span style="color:red">*</span></strong></label>
+                                                                    
+                                                            <div class="col-sm-8">
+                                                                <input type="text"
                                                                            name="fname"
                                                                            value="{{ old('fname') }}"
                                                                            placeholder="Father Name"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255"/>
-                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>မွေးသက္ကရဇ်:</strong>
-                                                                    <input type="date"
-                                                                           name="dob"
-                                                                           value="{{ old('dob') }}"
-                                                                           placeholder="Date Of Birth"
-                                                                           class="form-control"
-                                                                           data-parsley-required="true"
-                                                                           data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
+                                                        <div class=" form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Date Of Birth<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="date"
+                                                                            name="dob"
+                                                                            value="{{ old('dob') }}"
+                                                                            placeholder="Date Of Birth"
+                                                                            class="form-control"
+                                                                            data-parsley-required="true"
+                                                                            data-parsley-maxlength="255"/>
+                                                                    </div>
+                                                                
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>ကျား/မ:</strong>
-                                                                    <select class="form-control"
+                                                        <div class="form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Gender<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control"
                                                                             name="gender"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
@@ -123,14 +119,14 @@
                                                                         <option value="male">Male</option>
                                                                         <option value="female">Female</option>
                                                                     </select>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>ကိုးကွယ်သည့်ဘာသာ :</strong>
-                                                                    <select class="form-control"
+                                                        <div class="form-group row">
+                                                            
+                                                                    <label class="col-sm-2 col-form-label"><strong>Religious<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control"
                                                                             name="reglious"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
@@ -138,41 +134,42 @@
                                                                         <option value="Buddha">Buddha</option>
                                                                         <option value="Christian">Christian</option>
                                                                     </select>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>ဖုန်း :</strong>
-                                                                    <input type="text"
+                                                        <div class=" form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Phone Number<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text"
                                                                            name="phone"
                                                                            value="{{ old('phone') }}"
                                                                            placeholder="phone"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>လိပ်စာ:</strong>
-                                                                    <input type="text"
+                                                        <div class="form-group row">
+                                                           
+                                                                    <label class="col-sm-2 col-form-label"><strong>Address<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text"
                                                                            name="address"
                                                                            placeholder="address"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                                                <div class="form-group">
-                                                                    <strong>ဓာတ်ပုံ:</strong><br>
+                                                        <div class=" from-group row">
+                                                            
+                                                                <label class="col-sm-2 col-form-label"><strong>Student Image<span style="color:red">*</span></strong></label>
+                                                                <div class="col-sm-8">
+                                                                    
                                                                     <div style="height:0px;overflow:hidden;">
                                                                         <input class="btn-primary" type="file"
                                                                                name="file" id="profile-img"><i
@@ -186,36 +183,32 @@
                                                                             class="fas fa-upload"></i></button>
                                                                     <img src="" id="profile-img-tag"
                                                                          style="border:1px solid lightgray; width: 200px; height: 200px;"/>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-lg-12 margin-tb">
-                                                                <div class="pull-left">
-                                                                </div>
-                                                                <div class="pull-right">
-                                                                    <a class="btn btn-warning"
-                                                                       href="{{route('student.index')}}"> Back to
-                                                                        Listing</a>
-                                                                    <button type="submit" class="btn btn-success">Save
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </form>
+                                                                </div>  
+                                                                
+                                                        </div>   
+                                                
                                                 </div>
-
-                                                <!-- end form -->
-                
-                                            <!-- end content body panel -->
                                         </div>
                                     </section>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                
+                                <div class="col-md-2">
+                                </div>
+                                    <div class="col-md-8">
+                                        <a class="btn-group btn btn-warning float-right"
+                                           href="{{route('student.index')}}"> Back to
+                                            Listing</a>
+                                        <button type="submit" class="btn-group btn btn-success float-left">Save
+                                        </button>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>

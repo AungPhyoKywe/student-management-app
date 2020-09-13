@@ -8,7 +8,7 @@
     <a href="/dashboard" class="brand-link">
         <img src="/img/school_logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light"> <b>ကျောင်း</b>စီမံခန့်ခွဲမှု</span>
+        <span class="brand-text font-weight-light"> <b>Schools MN Systems </b></span>
     </a>
 
     <!-- Sidebar -->
@@ -38,7 +38,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-graduation-cap"></i>
                         <p>
-                            ကျောင်းသား
+                            Student
                             <i class="fas fa-angle-left right"></i>
 
                         </p>
@@ -47,7 +47,7 @@
                         <li class="nav-item">
                             <a href="{{route('student.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းသားစာရင်း</p>
+                                <p>Student List</p>
                             </a>
                         </li>
 
@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a href="{{ route('student.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းသားစာရင်းသွင်းရန်</p>
+                                <p>Add Student</p>
                             </a>
                         </li>
 
@@ -66,7 +66,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-chalkboard-teacher"></i>
                         <p>
-                            ဆရာ/ဆရာမ
+                            Teachers
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -74,13 +74,13 @@
                         <li class="nav-item">
                             <a href="{{route('teacher.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ဆရာစာရင်း</p>
+                                <p>Teacher List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('teacher.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ဆရာစာရင်းသွင်းရန်</p>
+                                <p>Add Teachers</p>
                             </a>
                         </li>
 
@@ -90,7 +90,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{route('enroll.index')}}" class="nav-link">
                         <i class="fas fa-book-open"></i>
-                        <p>ကျောင်းသားစာရင်းပေးသွင်းရန်
+                        <p>Enrollment
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -98,13 +98,13 @@
                         <li class="nav-item">
                             <a href="{{route('enroll.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းအပ်ထားသောစာရင်း</p>
+                                <p>Student Enroll List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('enroll.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းအပ်ရန်</p>
+                                <p>Add Student Enroll</p>
                             </a>
                         </li>
 
@@ -113,7 +113,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{ route('timetable.index') }}" class="nav-link">
                         <i class="fas fa-table"></i>
-                        <p>အချိန်ဇယား
+                        <p>TimeTable
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -121,13 +121,13 @@
                         <li class="nav-item">
                             <a href="{{route('timetable.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>အချိန်ဇယား</p>
+                                <p>TimeTable List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('timetable.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>အချိန်ဇယားထည့်ရန်</p>
+                                <p>Add TimeTable</p>
                             </a>
                         </li>
 
@@ -136,7 +136,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="far fa-sticky-note"></i>
-                        <p>စာမေးပွဲ
+                        <p>Exam
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -144,13 +144,13 @@
                         <li class="nav-item">
                             <a href="{{route('exam.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>စာမေးပွဲအချိန်စာရင်း</p>
+                                <p>Exam List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('exam.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>စာမေးပွဲအချိန်စာရင်းထည့်ရန်</p>
+                                <p>Add Exam </p>
                             </a>
                         </li>
 
@@ -160,7 +160,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-graduation-cap"></i>
-                        <p>စာသင်ခန်း
+                        <p>Class
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -168,13 +168,13 @@
                         <li class="nav-item">
                             <a href="{{route('class.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>စာသင်ခန်းစာရင်း</p>
+                                <p>Class List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('class.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>စာသင်ခန်းစာရင်းထည့်ရန်</p>
+                                <p>Add Class</p>
                             </a>
                         </li>
 
@@ -183,7 +183,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-bookmark"></i>
-                        <p>ဘာသာရပ်
+                        <p>Subjects
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -191,13 +191,13 @@
                         <li class="nav-item">
                             <a href="{{route('subject.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ဘာသာရပ်စာရင်း</p>
+                                <p>Subject List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('subject.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ဘာသာရပ်စာရင်းထည့်ရန်</p>
+                                <p>Add Subject</p>
                             </a>
                         </li>
 
@@ -209,7 +209,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-book-open"></i>
-                        <p>အမှတ်
+                        <p>Student Scores
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -217,13 +217,13 @@
                         <li class="nav-item">
                             <a href="{{route('score.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>အမှတ်စာရင်း</p>
+                                <p>Score List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('score.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>အမှတ်စာရင်းထည့်ရန်</p>
+                                <p>Add Score</p>
                             </a>
                         </li>
 
@@ -233,7 +233,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-money-check-alt"></i>
-                        <p>လစာဉ်ကြေး
+                        <p>Payments
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -242,13 +242,13 @@
                         <li class="nav-item">
                             <a href="{{route('payment.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>လစာဉ်ကြေး</p>
+                                <p>Payment List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('payment.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>လစာဉ်ကြေးပေးသွင်းရန်</p>
+                                <p>Add Payment</p>
                             </a>
                         </li>
                     </ul>
@@ -259,7 +259,7 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-users"></i>
-                        <p>ကျောင်းခေါ်ကြိမ်
+                        <p>Student Attendance
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -267,13 +267,13 @@
                         <li class="nav-item">
                             <a href="{{route('att.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းခေါ်ကြိမ်စာရင်း</p>
+                                <p>Attendance List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('att.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းခေါ်ကြိမ်စာရင်းထည့်ရန်</p>
+                                <p>Add Attendance</p>
                             </a>
                         </li>
 
@@ -284,7 +284,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-book"></i>
                         <p>
-                            အစီရင်ခံစာ
+                            School Report 
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -293,7 +293,7 @@
                         <li class="nav-item">
                             <a href="{{route('st_report.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ကျောင်းအစီရင်ခံစာ</p>
+                                <p>School Report</p>
                             </a>
                         </li>
 

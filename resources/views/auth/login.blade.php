@@ -22,26 +22,32 @@
 
     <style>
        
-      img{
-          width: 70px;
-          border-radius: 50%;
+      #img-logo{
+          width: 5rem;
+          border-radius: 100%;
 
+      }
+     .body-bg{
+          background-image: url("img/bg-system.jpg");
+          background-size: cover;
+         
+          background-color: black;
       }
     
     </style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page body-bg">
 <div class="login-box">
     <div class="login-logo">
-        <img src="/img/school_logo.jpg">
+        <img src="/img/school_logo.jpg" id="img-logo">
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">အသုံးပြုရန်အတွက်လော့အင်ဝင်ပါ</p>
+        <div class="card-body login-card-body" style="border-radius: 10%;box-shadow: #54678f 10px;">
+            <p class="login-box-msg"><strong>Schools MN System</strong></p>
             @error('email')
             <span class="text-danger" role="alert">
-                သင့်မေးလ်ိပ်စာမှားယွင်းနေပါတယ်
+                <i>incorrect email address</i>
             </span>
             @enderror
 
@@ -60,7 +66,7 @@
                 </div>
                 @error('password')
                 <span class="text-danger" role="alert">
-                    သင့်စကားဝှက်မှားယွင်းနေပါတယ်
+                    incorrect password
                 </span>
                 @enderror
                 <div class="input-group mb-3">
@@ -75,24 +81,39 @@
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            လော့အင်
+                        <button type="submit" class="btn btn-warning btn-block" style="border-color: white ">
+                            Login
                         </button>
 
                     </div>
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                          <input type="checkbox" id="remember">
+                          <label for="remember">
+                            Remember Me
+                          </label>
+                        </div>
+                      </div>
+                    
                     <!-- /.col -->
                 </div>
             </form>
-
+            
             <!-- /.social-auth-links -->
 
-            <p class="mb-1">
-                @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        သင့်စကားဝှက်မေ့နေပါသာလား?
-                    </a>
-                @endif
-            </p>
+            <div class="row">
+                <div class="col-12">
+
+                    <p class="mb-1">
+                        @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                Forgot your password?
+                            </a>
+                        @endif
+                    </p>
+
+                </div>
+            </div>
 
         </div>
         <!-- /.login-card-body -->

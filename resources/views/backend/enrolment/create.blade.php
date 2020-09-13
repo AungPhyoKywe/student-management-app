@@ -24,6 +24,12 @@
                 <div class="col-12">
 
                     <div class="card">
+                        <div class="card-header"></div>
+                    <!-- start form -->
+                    <form name="studentForm" id="studentForm" method="POST"
+                        action="{{ route('enroll.store') }}"
+                        data-parsley-validate="true" enctype="multipart/form-data">
+                        {!! csrf_field() !!}
                         
                         <div class="card-body">
 
@@ -36,14 +42,7 @@
 
                                             <!-- start content heading panel -->
                                             <div class="panel-heading">
-                                                @if(Session::has('enrol_error'))
-                                                <div class="alert alert-danger" role="alert">
-                                                    This Student is already enroll!
-                                                  </div>
-                                                @endif
-
-                                                
-                                                  
+                                                @include('partials.toast')  
                                             </div>
                                             <!-- end content heading panel -->
 
@@ -52,17 +51,14 @@
                                             
                                                 <div class="container">
 
-                                                    <!-- start form -->
-                                                    <form name="studentForm" id="studentForm" method="POST"
-                                                          action="{{ route('enroll.store') }}"
-                                                          data-parsley-validate="true" enctype="multipart/form-data">
-                                                        {!! csrf_field() !!}
+                                                    
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Student Name:</strong>
-                                                                    <select class="form-control"
+                                                        <div class="form-group row">
+                                                            
+                                                                    <label class="col-sm-2 col-form-label"><strong>Student Name<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+
+                                                                        <select class="form-control"
                                                                             name="student_name"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
@@ -72,16 +68,16 @@
                                                                        
                                                                         @endforeach
                                                                     </select>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
 
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Class Name:</strong>
-                                                                    <select class="form-control"
+                                                        <div class="form-group row">
+                                                            
+                                                            <label class="col-sm-2 col-form-label"><strong>Class Name<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control"
                                                                             name="class_name"
                                                                             data-parsley-required="true"
                                                                             data-parsley-maxlength="255">
@@ -91,49 +87,47 @@
                                                                                 value="{{ $classes }}">{{ $key}}</option>
                                                                         @endforeach
                                                                     </select>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
+                                                                
                                                         </div>
 
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                                                <div class="form-group">
-                                                                    <strong>Enrolment Date:</strong>
-                                                                    <input type="date"
+                                                        <div class="form-group row">
+                                                            
+                                                                    <label class="col-sm-2 col-form-label"><strong>Enrollment Date<span style="color:red">*</span></strong></label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="date"
                                                                            name="date"
                                                                            value="{{ old('phone') }}"
                                                                            class="form-control"
                                                                            data-parsley-required="true"
                                                                            data-parsley-maxlength="255"/>
-                                                                </div>
-                                                            </div>
+                                                                    </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12 margin-tb">
-                                                                <div class="pull-left">
-                                                                </div>
-                                                                <div class="pull-right">
-                                                                    <a class="btn btn-warning"
-                                                                       href="{{route('enroll.index')}}"> Back to
-                                                                        Listing</a>
-                                                                    <button type="submit" class="btn btn-success">Save
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        
 
-                                                    </form>
+                                                   
                                                 </div>
-
-                                                <!-- end form -->
-                                                <br><br><br>
-                                            
-                                            <!-- end content body panel -->
                                         </div>
                                     </section>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                
+                                <div class="col-md-2">
+                                </div>
+                                    <div class="col-md-8">
+                                        <a class="btn-group btn btn-warning float-right"
+                                           href="{{route('enroll.index')}}"> Back to
+                                            Listing</a>
+                                        <button type="submit" class="btn-group btn btn-success float-left">Save
+                                        </button>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>
