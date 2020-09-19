@@ -8,21 +8,29 @@ use DB;
 use Illuminate\Http\Request;
 use App\User;
 use Datatables;
+use App\Repositories\Student\StudentRepositoryInterface;
+
 class StudentController extends Controller
 {
+    protected $student;
+
     /**
-     * Display a listing of the resource.
+     * PostController constructor.
      *
-     * @return \Illuminate\Http\Response
+     * @param PostRepositoryInterface $post
      */
+    public function __construct(StudentRepositoryInterface $student)
+    {
+        $this->student = $student;
+    }
+
+
 
     public function index()
     {
-        $data = DB::table('students')
-            ->select('*')
-            ->get();
+        
 
-        return view('backend.student.show',['data'=>$data]);
+        return view('backend.student.show',['data'=>$this->student->all()]);
     }
     /**
      * Show the form for creating a new resource.
@@ -31,7 +39,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $class= Classes::pluck('class_id','class_name');
+        $class= $this->student->getClassName();
 
         return view('backend.student.create',['class'=>$class]);
     }
@@ -44,40 +52,9 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'fname' => 'required',
-            'dob' => 'required',
-            'reglious' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
-        ]);
-        $student=new Student();
-        $student->name=$request->name;
-        $student->age=$request->age;
-        $student->gender=$request->gender;
-        $student->father_name=$request->fname;
-        $student->DOB=$request->dob;
-        $student->reglious=$request->reglious;
-        $student->ph_no=$request->phone;
-        $student->address=$request->address;
-
-        if($request->hasfile('file'))
-        {
-            $file = $request->file('file');
-            $extension = $file->getClientOriginalExtension(); // getting image extension
-            $filename =time().'.'.$extension;
-            $file->move('uploads/logos/', $filename);
-            $student->profile_image=$filename;
-        }else{
-            $filename='student.png';
-            $student->profile_image=$filename;
-
-        }
-
-        $student->save();
-
-        return redirect('/student');
+        $this->student->saveStudent($request);
+        
+        return redirect()->route('student.index');
     }
 
     /**
